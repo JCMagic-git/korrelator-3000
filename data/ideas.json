@@ -1,0 +1,26 @@
+[
+  {
+    "id": 2,
+    "title": "Schwimmbäder pro 100000 Einwohner",
+    "category": "Infrastruktur",
+    "notes": "Quelle: Kommunale Statistik",
+    "status": "idea",
+    "created_at": "2025-11-17T22:17:33"
+  },
+  {
+    "id": 3,
+    "title": "Kinos pro 100000 Einwohner",
+    "category": "Kultur",
+    "notes": "",
+    "status": "idea",
+    "created_at": "2025-11-17T22:17:34"
+  },
+  {
+    "id": 4,
+    "title": "Anteil Radverkehr am Modal Split",
+    "category": "Verkehr",
+    "notes": "",
+    "status": "idea",
+    "created_at": "2025-11-17T22:17:34"
+  }
+]
