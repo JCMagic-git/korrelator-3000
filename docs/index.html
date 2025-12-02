@@ -52,15 +52,11 @@
   ></script>
 
   <script>
+  <script>
     // Karte initialisieren (Deutschland grob zentriert)
     const map = L.map('map').setView([51.2, 10.4], 6);
 
-    //// OpenStreetMap-Kachel-Layer
-    //L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    //  maxZoom: 10,
-    //  attribution: '&copy; OpenStreetMap-Mitwirkende'
-    //}).addTo(map);
-
+    // Kein Tile-Layer -> nur grauer Hintergrund aus CSS
     const infoBox = document.getElementById('infoBox');
     let geojsonLayer = null;
 
@@ -87,18 +83,17 @@
       const name =
         props.NAME_3 || props.GEN || props.NAME || 'Unbekannter Kreis';
 
-      // Hier später deine Korrelationswerte ergänzen - erstmal ein zufälliger Dummywert
-  const dummy = props.dummyIndex;
+      const dummy = props.dummyIndex;
 
-  infoBox.innerHTML = `
-      <strong>${name}</strong><br>
-      Dummy-Korrelationswert: <strong>${dummy}</strong>
-       `;
+      infoBox.innerHTML = `
+        <strong>${name}</strong><br>
+        Dummy-Korrelationswert: <strong>${dummy}</strong>
+      `;
     }
 
     function resetHighlight(e) {
       geojsonLayer.resetStyle(e.target);
-      // Optional: infoBox zurücksetzen, wenn Maus keinen Kreis mehr berührt
+      // Optional: Info zurücksetzen
       // infoBox.textContent = 'Fahre mit der Maus über einen Kreis…';
     }
 
@@ -110,38 +105,35 @@
     }
 
     // GeoJSON der Kreise laden
-fetch('data/kreise.geojson')
-  .then((response) => response.json())
-  .then((data) => {
+    fetch('data/kreise.geojson')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Netzwerkfehler beim Laden der Kreise');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // 🔥 Dummy-Korrelationswerte hinzufügen
+        data.features.forEach(f => {
+          f.properties.dummyIndex = (Math.random()).toFixed(2);
+        });
 
-      // 🔥 Dummy-Korrelationswerte hinzufügen
-      data.features.forEach(f => {
-        f.properties.dummyIndex = (Math.random()).toFixed(2);  
-      });
-
-      geojsonLayer = L.geoJSON(data, {
+        geojsonLayer = L.geoJSON(data, {
           style: style,
           onEachFeature: onEachFeature
-      }).addTo(map);
+        }).addTo(map);
 
-      // Karte auf Deutschland zoomen
-      const bounds = geojsonLayer.getBounds();
-      map.fitBounds(bounds);
-      map.setMaxBounds(bounds.pad(0.5));
-  })
-
-
-  // Nach dem Laden: Karte automatisch auf Deutschland zoomen
-  const bounds = geojsonLayer.getBounds();
-  map.fitBounds(bounds);
-
-  // Optional: Panning einschränken, damit man nicht „aus Versehen“ ans andere Ende der Welt scrollt
-  map.setMaxBounds(bounds.pad(0.5));
-})
+        // Karte auf Deutschland zoomen und Begrenzung setzen
+        const bounds = geojsonLayer.getBounds();
+        map.fitBounds(bounds);
+        map.setMaxBounds(bounds.pad(0.5));
+      })
       .catch((error) => {
         console.error(error);
         infoBox.textContent = 'Kreise-GeoJSON konnte nicht geladen werden.';
       });
+  </script>
+
   </script>
 </body>
 </html>
