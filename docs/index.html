@@ -87,8 +87,13 @@
       const name =
         props.NAME_3 || props.GEN || props.NAME || 'Unbekannter Kreis';
 
-      // Hier später deine Korrelationswerte ergänzen
-      infoBox.textContent = name;
+      // Hier später deine Korrelationswerte ergänzen - erstmal ein zufälliger Dummywert
+  const dummy = props.dummyIndex;
+
+  infoBox.innerHTML = `
+      <strong>${name}</strong><br>
+      Dummy-Korrelationswert: <strong>${dummy}</strong>
+       `;
     }
 
     function resetHighlight(e) {
@@ -105,18 +110,26 @@
     }
 
     // GeoJSON der Kreise laden
-    fetch('data/kreise.geojson')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Netzwerkfehler beim Laden der Kreise');
-        }
-        return response.json();
-      })
-     .then((data) => {
-  geojsonLayer = L.geoJSON(data, {
-    style: style,
-    onEachFeature: onEachFeature
-  }).addTo(map);
+fetch('data/kreise.geojson')
+  .then((response) => response.json())
+  .then((data) => {
+
+      // 🔥 Dummy-Korrelationswerte hinzufügen
+      data.features.forEach(f => {
+        f.properties.dummyIndex = (Math.random()).toFixed(2);  
+      });
+
+      geojsonLayer = L.geoJSON(data, {
+          style: style,
+          onEachFeature: onEachFeature
+      }).addTo(map);
+
+      // Karte auf Deutschland zoomen
+      const bounds = geojsonLayer.getBounds();
+      map.fitBounds(bounds);
+      map.setMaxBounds(bounds.pad(0.5));
+  })
+
 
   // Nach dem Laden: Karte automatisch auf Deutschland zoomen
   const bounds = geojsonLayer.getBounds();
