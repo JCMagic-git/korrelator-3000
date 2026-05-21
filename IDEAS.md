@@ -2,6 +2,17 @@
 
 Stand: 2026-05-21
 
+## Score-Idee
+Der Korrelator-Score kombiniert zwei ausgewaehlte Kennzahlen nach Min-Max-Normierung:
+
+```text
+norm1 = (wert1 - min1) / (max1 - min1)
+norm2 = (wert2 - min2) / (max2 - min2)
+score = norm1 * norm2 * 100
+```
+
+Das Ergebnis ist eine spielerische Gleichzeitigkeitsskala. 100 Prozent bedeutet: beide Werte liegen am Maximum ihrer jeweiligen Kennzahl. Der Score ist keine echte statistische Korrelation, und die automatisch generierten Begruendungstexte sind absichtlich naiv bis falsch.
+
 ## #2 Kneipendichte
 - Status: oeffentlich greifbar, Import noch zu bauen
 - Quelle: OpenStreetMap ueber Overpass API

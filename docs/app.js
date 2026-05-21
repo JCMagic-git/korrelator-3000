@@ -92,6 +92,39 @@ function formatValue(value, metric) {
   }).format(value);
 }
 
+function normalizeValue(value, metric) {
+  const [min, max] = metric.range;
+
+  if (max === min) {
+    return 0;
+  }
+
+  return Math.max(0, Math.min(1, (value - min) / (max - min)));
+}
+
+function createCorrelationScore(feature, primary, secondary) {
+  const primaryValue = createMvpValue(feature, primary);
+  const secondaryValue = createMvpValue(feature, secondary);
+  const primaryNorm = normalizeValue(primaryValue, primary);
+  const secondaryNorm = normalizeValue(secondaryValue, secondary);
+  const score = primaryNorm * secondaryNorm * 100;
+
+  return {
+    primaryValue,
+    secondaryValue,
+    primaryNorm,
+    secondaryNorm,
+    score,
+  };
+}
+
+function formatScore(score) {
+  return new Intl.NumberFormat("de-DE", {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(score);
+}
+
 function getSelectedMetrics() {
   const primary =
     metricDefinitions.find((metric) => metric.id === primaryMetricSelect.value) ||
@@ -105,11 +138,17 @@ function getSelectedMetrics() {
 }
 
 function getFeatureStyle(feature) {
-  const { primary } = getSelectedMetrics();
-  const [min, max] = primary.range;
-  const value = createMvpValue(feature, primary);
-  const intensity = Math.max(0, Math.min(1, (value - min) / (max - min)));
-  const fill = intensity > 0.74 ? "#496b61" : intensity > 0.52 ? "#81988f" : intensity > 0.3 ? "#bcc6bf" : "#e0e3df";
+  const { primary, secondary } = getSelectedMetrics();
+  const { score } = createCorrelationScore(feature, primary, secondary);
+  const intensity = score / 100;
+  const fill =
+    intensity > 0.78
+      ? "#2f594b"
+      : intensity > 0.55
+        ? "#5f8275"
+        : intensity > 0.32
+          ? "#9aaca4"
+          : "#d8ddd9";
 
   return {
     weight: 0.8,
@@ -120,30 +159,79 @@ function getFeatureStyle(feature) {
   };
 }
 
+function getCorrelationTier(score) {
+  if (score >= 67) {
+    return {
+      label: "alarmierend korrelatorisch",
+      text:
+        "Die Werte stehen so demonstrativ nebeneinander, dass der Korrelator kurz einen Laborkittel anziehen wollte. Wissenschaftlich bleibt das Quatsch.",
+    };
+  }
+
+  if (score >= 34) {
+    return {
+      label: "verdaechtig mittel",
+      text:
+        "Fuer eine Stammtischthese reicht es schon fast. Fuer Forschung eher nicht, aber der Kreis schaut auffaellig unauffaellig aus.",
+    };
+  }
+
+  return {
+    label: "kaum gemeinsamer Ausschlag",
+    text:
+      "Die These muss noch im Keller reifen. Diese beiden Werte nicken sich hier hoechstens aus der Ferne zu.",
+  };
+}
+
+function createSillyExplanation(regionName, primary, secondary, score) {
+  const tier = getCorrelationTier(score);
+  const templates = [
+    `In ${regionName} treffen ${primary.label} und ${secondary.label} aufeinander. Die Einstufung lautet: ${tier.label}. Das beweist natuerlich gar nichts, ausser dass der Korrelator bedeutungsvoll in seine Kaffeetasse starrt.`,
+    `${regionName} liefert eine Zahlensuppe, in der ${primary.label} und ${secondary.label} gemeinsam oben schwimmen. Das beweist nichts, klingt aber fuer drei Sekunden sehr ueberzeugend.`,
+    `Wenn man beide Augen zudrueckt, erklaert ${secondary.label} hier bestimmt ${primary.label}. Wenn man eines wieder oeffnet, bleibt immerhin ein huebscher Score.`,
+    `Der Kreis ${regionName} behauptet statistisch rein gar nichts. Der Korrelator behauptet trotzdem: Das Muster riecht nach Zufall mit Selbstbewusstsein.`,
+  ];
+  const index = Math.min(
+    templates.length - 1,
+    Math.floor((score / 100) * templates.length)
+  );
+
+  return {
+    tier,
+    text: templates[index],
+  };
+}
+
 function renderInfo(feature) {
-  const name = escapeHtml(getRegionName(feature));
+  const regionName = getRegionName(feature);
+  const name = escapeHtml(regionName);
   const { primary, secondary } = getSelectedMetrics();
-  const primaryValue = createMvpValue(feature, primary);
-  const secondaryValue = createMvpValue(feature, secondary);
-  const delta = primaryValue === secondaryValue ? "gleichauf" : primaryValue > secondaryValue ? "mehr Karte links" : "mehr Vergleich rechts";
+  const { primaryValue, secondaryValue, primaryNorm, secondaryNorm, score } =
+    createCorrelationScore(feature, primary, secondary);
+  const explanation = createSillyExplanation(regionName, primary, secondary, score);
 
   infoBox.innerHTML = `
-    <p class="eyebrow">MVP-Platzhalterwerte</p>
+    <p class="eyebrow">Korrelator-Score</p>
     <h1>${name}</h1>
-    <p>Die Quellen sind geprueft; die Kartenwerte sind bis zum Importer deterministische Testwerte.</p>
+    <p>Min-max-normalisierte Gleichzeitigkeit beider Kennzahlen. Keine echte Korrelation, keine Kausalitaet.</p>
+    <div class="score-box">
+      <strong>${formatScore(score)}%</strong>
+      <span>${escapeHtml(explanation.tier.label)}</span>
+    </div>
     <div class="metric-grid">
       <div class="metric">
         <span>${escapeHtml(primary.label)}</span>
         <strong>${formatValue(primaryValue, primary)}</strong>
-        <span>${escapeHtml(primary.unit)}</span>
+        <span>${escapeHtml(primary.unit)} · normiert ${formatScore(primaryNorm * 100)}%</span>
       </div>
       <div class="metric">
         <span>${escapeHtml(secondary.label)}</span>
         <strong>${formatValue(secondaryValue, secondary)}</strong>
-        <span>${escapeHtml(secondary.unit)}</span>
+        <span>${escapeHtml(secondary.unit)} · normiert ${formatScore(secondaryNorm * 100)}%</span>
       </div>
     </div>
-    <p class="hint">Korrelationslaune: ${delta}. Noch kein echter Statistikbefund.</p>
+    <p class="silly-proof">${escapeHtml(explanation.text)}</p>
+    <p class="hint">Hinweis: Das ist ein spielerischer Score aus Platzhalterwerten, kein Statistikbefund.</p>
   `;
 }
 
@@ -210,11 +298,14 @@ function zoomToFeature(event) {
 function bindFeature(feature, layer) {
   const name = getRegionName(feature);
   const { primary, secondary } = getSelectedMetrics();
-  const primaryValue = createMvpValue(feature, primary);
-  const secondaryValue = createMvpValue(feature, secondary);
+  const { primaryValue, secondaryValue, score } = createCorrelationScore(
+    feature,
+    primary,
+    secondary
+  );
 
   layer.bindTooltip(
-    `${name}: ${primary.label} ${formatValue(primaryValue, primary)} / ${secondary.label} ${formatValue(secondaryValue, secondary)}`,
+    `${name}: Score ${formatScore(score)}% · ${primary.label} ${formatValue(primaryValue, primary)} / ${secondary.label} ${formatValue(secondaryValue, secondary)}`,
     {
       sticky: true,
       direction: "top",

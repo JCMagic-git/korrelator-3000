@@ -15,8 +15,21 @@ Die Kartenwerte sind aktuell deterministische MVP-Platzhalter. Sie sind keine ec
   - #8 SPD Bundestagswahl 2025
   - #14 Schwimmbaeder pro 100.000 Einwohner
 - Quellencheck im UI
+- Korrelator-Score aus zwei min-max-normalisierten Kennzahlen
 - Hover- und Klick-Tooltips pro Kreis
 - robuste Fehlermeldung, falls JSON-Dateien nicht geladen werden
+
+## Korrelator-Score
+
+Der Score ist bewusst naiv:
+
+```text
+norm1 = (wert1 - min1) / (max1 - min1)
+norm2 = (wert2 - min2) / (max2 - min2)
+score = norm1 * norm2 * 100
+```
+
+Wenn beide Kennzahlen in einem Kreis am oberen Ende liegen, landet der Kreis bei 100 Prozent. Das ist keine statistische Korrelation und keine Kausalitaetsaussage, sondern eine spielerische Gleichzeitigkeitsskala. Der automatisch erzeugte Begruendungstext ist absichtlich humoristisch und ausdruecklich Quatsch.
 
 ## Datenquellen-Check
 
