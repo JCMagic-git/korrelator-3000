@@ -1,6 +1,7 @@
 const GEOJSON_PATH = "data/kreise.geojson";
 const LEGACY_GEOJSON_PATH = "data/kreise.geojson.json";
 const METRICS_PATH = "data/metrics.json";
+const REAL_METRICS_PATH = "data/real_metrics.json";
 
 const map = L.map("map", {
   zoomControl: true,
@@ -27,6 +28,7 @@ const secondaryMetricSelect = document.getElementById("secondaryMetric");
 
 let geojsonLayer = null;
 let metricDefinitions = [];
+let realMetricsData = { values: {}, coverage: {}, sources: {}, notes: [] };
 
 function repairMojibake(value) {
   if (typeof value !== "string" || !/[ÃƒÃ‚]/.test(value)) {
@@ -72,16 +74,22 @@ function getSeed(feature, metricId) {
   return (rawId * 1103515245 + metricSalt * 12345) >>> 0;
 }
 
-function createMvpValue(feature, metric) {
-  const [min, max] = metric.range;
-  const seed = getSeed(feature, metric.id);
-  const fraction = (seed % 1000) / 999;
-  const value = min + (max - min) * fraction;
+function getRealMetricsForFeature(feature) {
+  const featureId = String(feature.id ?? "");
+  return realMetricsData.values?.[featureId] || null;
+}
 
-  return metric.unit.includes("Euro") ? Math.round(value) : Number(value.toFixed(1));
+function getMetricValue(feature, metric) {
+  const values = getRealMetricsForFeature(feature);
+  const value = values?.[metric.id];
+  return Number.isFinite(value) ? value : null;
 }
 
 function formatValue(value, metric) {
+  if (value === null || value === undefined || Number.isNaN(value)) {
+    return "nicht gemappt";
+  }
+
   if (metric.unit.includes("Euro")) {
     return new Intl.NumberFormat("de-DE").format(value);
   }
@@ -93,6 +101,10 @@ function formatValue(value, metric) {
 }
 
 function normalizeValue(value, metric) {
+  if (value === null || value === undefined || Number.isNaN(value)) {
+    return null;
+  }
+
   const [min, max] = metric.range;
 
   if (max === min) {
@@ -103,11 +115,12 @@ function normalizeValue(value, metric) {
 }
 
 function createCorrelationScore(feature, primary, secondary) {
-  const primaryValue = createMvpValue(feature, primary);
-  const secondaryValue = createMvpValue(feature, secondary);
+  const primaryValue = getMetricValue(feature, primary);
+  const secondaryValue = getMetricValue(feature, secondary);
   const primaryNorm = normalizeValue(primaryValue, primary);
   const secondaryNorm = normalizeValue(secondaryValue, secondary);
-  const score = primaryNorm * secondaryNorm * 100;
+  const score =
+    primaryNorm === null || secondaryNorm === null ? null : primaryNorm * secondaryNorm * 100;
 
   return {
     primaryValue,
@@ -119,6 +132,10 @@ function createCorrelationScore(feature, primary, secondary) {
 }
 
 function formatScore(score) {
+  if (score === null || score === undefined || Number.isNaN(score)) {
+    return "n/a";
+  }
+
   return new Intl.NumberFormat("de-DE", {
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
@@ -140,6 +157,17 @@ function getSelectedMetrics() {
 function getFeatureStyle(feature) {
   const { primary, secondary } = getSelectedMetrics();
   const { score } = createCorrelationScore(feature, primary, secondary);
+  if (score === null) {
+    return {
+      weight: 0.8,
+      color: "#9aa19c",
+      opacity: 0.65,
+      fillColor: "#eef0ed",
+      fillOpacity: 0.58,
+      dashArray: "3 3",
+    };
+  }
+
   const intensity = score / 100;
   const fill =
     intensity > 0.78
@@ -160,6 +188,14 @@ function getFeatureStyle(feature) {
 }
 
 function getCorrelationTier(score) {
+  if (score === null) {
+    return {
+      label: "nicht gemappt",
+      text:
+        "Hier fehlt mindestens einer der echten Werte. Der Korrelator schweigt ausnahmsweise aus gutem Grund.",
+    };
+  }
+
   if (score >= 67) {
     return {
       label: "alarmierend korrelatorisch",
@@ -209,29 +245,46 @@ function renderInfo(feature) {
   const { primaryValue, secondaryValue, primaryNorm, secondaryNorm, score } =
     createCorrelationScore(feature, primary, secondary);
   const explanation = createSillyExplanation(regionName, primary, secondary, score);
+  const values = getRealMetricsForFeature(feature) || {};
+  const countDetails = [
+    values.kneipen_count !== undefined ? `Kneipen/Bar-Nodes: ${values.kneipen_count}` : null,
+    values.schwimmbaeder_count !== undefined
+      ? `Schwimmbad-Nodes: ${values.schwimmbaeder_count}`
+      : null,
+    values.population
+      ? `Einwohner 2023: ${new Intl.NumberFormat("de-DE").format(values.population)}`
+      : null,
+  ]
+    .filter(Boolean)
+    .join(" · ");
 
   infoBox.innerHTML = `
-    <p class="eyebrow">Korrelator-Score</p>
+    <p class="eyebrow">Echte Daten · Korrelator-Score</p>
     <h1>${name}</h1>
-    <p>Min-max-normalisierte Gleichzeitigkeit beider Kennzahlen. Keine echte Korrelation, keine Kausalitaet.</p>
+    <p>Min-max-normalisierte Gleichzeitigkeit echter importierter Werte. Keine echte Korrelation, keine Kausalitaet.</p>
     <div class="score-box">
-      <strong>${formatScore(score)}%</strong>
+      <strong>${formatScore(score)}${score === null ? "" : "%"}</strong>
       <span>${escapeHtml(explanation.tier.label)}</span>
     </div>
     <div class="metric-grid">
       <div class="metric">
         <span>${escapeHtml(primary.label)}</span>
         <strong>${formatValue(primaryValue, primary)}</strong>
-        <span>${escapeHtml(primary.unit)} · normiert ${formatScore(primaryNorm * 100)}%</span>
+        <span>${escapeHtml(primary.unit)} · normiert ${formatScore(
+          primaryNorm === null ? null : primaryNorm * 100
+        )}${primaryNorm === null ? "" : "%"}</span>
       </div>
       <div class="metric">
         <span>${escapeHtml(secondary.label)}</span>
         <strong>${formatValue(secondaryValue, secondary)}</strong>
-        <span>${escapeHtml(secondary.unit)} · normiert ${formatScore(secondaryNorm * 100)}%</span>
+        <span>${escapeHtml(secondary.unit)} · normiert ${formatScore(
+          secondaryNorm === null ? null : secondaryNorm * 100
+        )}${secondaryNorm === null ? "" : "%"}</span>
       </div>
     </div>
+    ${countDetails ? `<p class="data-footnote">${escapeHtml(countDetails)}</p>` : ""}
     <p class="silly-proof">${escapeHtml(explanation.text)}</p>
-    <p class="hint">Hinweis: Das ist ein spielerischer Score aus Platzhalterwerten, kein Statistikbefund.</p>
+    <p class="hint">Hinweis: Das ist ein spielerischer Score aus echten, teils naeherungsweise gemappten Daten, kein Statistikbefund.</p>
   `;
 }
 
@@ -241,15 +294,17 @@ function renderSources() {
 
   sourceBox.innerHTML = `
     <p class="eyebrow">Quellencheck</p>
-    <h2>Oeffentlich greifbar</h2>
+    <h2>Echte Daten geladen</h2>
+    <p>${escapeHtml(
+      realMetricsData.notes?.[0] ||
+        "Echte Werte wurden aus oeffentlichen Quellen importiert."
+    )}</p>
     <ul class="source-list">
       ${selected
         .map((metric) => {
-          const statusClass = metric.sourceStatus === "public-ready" ? "" : "needs-work";
-          const statusText =
-            metric.sourceStatus === "public-ready"
-              ? "direkt importierbar"
-              : "oeffentlich, Import bauen";
+          const statusClass = metric.dataStatus === "real" ? "" : "needs-work";
+          const coverage = realMetricsData.coverage?.[metric.id] ?? 0;
+          const statusText = `${coverage} Kreise gemappt`;
 
           return `
             <li class="source-card">
@@ -267,9 +322,9 @@ function renderSources() {
 
 function showInitialInfo() {
   infoBox.innerHTML = `
-    <p class="eyebrow">MVP</p>
+    <p class="eyebrow">Echte Daten</p>
     <h1>Korrelator 3000</h1>
-    <p>Oeffentliche Quellen sind hinterlegt, Kartenwerte bleiben bis zum Import Platzhalter.</p>
+    <p>Waehle zwei Kennzahlen und klicke einen Kreis. Fehlende Werte sind sichtbar als nicht gemappt markiert.</p>
   `;
 }
 
@@ -305,7 +360,7 @@ function bindFeature(feature, layer) {
   );
 
   layer.bindTooltip(
-    `${name}: Score ${formatScore(score)}% · ${primary.label} ${formatValue(primaryValue, primary)} / ${secondary.label} ${formatValue(secondaryValue, secondary)}`,
+    `${name}: Score ${formatScore(score)}${score === null ? "" : "%"} · ${primary.label} ${formatValue(primaryValue, primary)} / ${secondary.label} ${formatValue(secondaryValue, secondary)}`,
     {
       sticky: true,
       direction: "top",
@@ -376,8 +431,11 @@ async function loadGeoJson() {
 }
 
 async function init() {
-  statusMessage.textContent = "Lade Kennzahlen und Kreise...";
-  metricDefinitions = await fetchJson(METRICS_PATH);
+  statusMessage.textContent = "Lade echte Kennzahlen und Kreise...";
+  [metricDefinitions, realMetricsData] = await Promise.all([
+    fetchJson(METRICS_PATH),
+    fetchJson(REAL_METRICS_PATH),
+  ]);
   populateMetricSelects();
 
   const data = await loadGeoJson();
@@ -387,7 +445,7 @@ async function init() {
   }).addTo(map);
 
   map.fitBounds(geojsonLayer.getBounds(), { padding: [16, 16] });
-  statusMessage.textContent = `${data.features.length} Kreis-Geometrien geladen. Werte sind MVP-Platzhalter.`;
+  statusMessage.textContent = `${data.features.length} Kreis-Geometrien geladen. Echte Werte: Einkommen ${realMetricsData.coverage.einkommen || 0}, OSM-Raten ${realMetricsData.coverage.kneipendichte || 0}, Wahlnaeherung ${realMetricsData.coverage.afd_btw2025 || 0}.`;
   renderSources();
   showInitialInfo();
 }

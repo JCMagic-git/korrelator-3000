@@ -2,7 +2,7 @@
 
 Korrelator 3000 ist ein experimentelles Web-Dashboard fuer ueberraschende Korrelationen zwischen Deutschland-Datensaetzen. Der aktuelle MVP zeigt eine Leaflet-Karte mit deutschen Kreis-Geometrien, macht fuenf Kennzahl-Kandidaten aus den GitHub-Issues auswaehlbar und dokumentiert die oeffentlichen Datenquellen direkt im UI.
 
-Die Kartenwerte sind aktuell deterministische MVP-Platzhalter. Sie sind keine echten statistischen Aussagen. Die Quellen sind aber bereits geprueft und in `docs/data/metrics.json` hinterlegt.
+Die Kartenwerte kommen inzwischen aus echten oeffentlichen Datenquellen. Einige Werte sind wegen der aktuellen GADM-Kreisgeometrie ohne amtliche Kreisschluessel per Namensnaeherung gemappt; fehlende Werte erscheinen im UI als `nicht gemappt`.
 
 ## Aktueller MVP
 
@@ -18,6 +18,7 @@ Die Kartenwerte sind aktuell deterministische MVP-Platzhalter. Sie sind keine ec
 - Korrelator-Score aus zwei min-max-normalisierten Kennzahlen
 - Hover- und Klick-Tooltips pro Kreis
 - robuste Fehlermeldung, falls JSON-Dateien nicht geladen werden
+- echte Wertedatei `docs/data/real_metrics.json`
 
 ## Korrelator-Score
 
@@ -33,11 +34,12 @@ Wenn beide Kennzahlen in einem Kreis am oberen Ende liegen, landet der Kreis bei
 
 ## Datenquellen-Check
 
-- Bundestagswahl 2025: Die Bundeswahlleiterin bietet Open Data im CSV-Format an. Wahlkreiswerte sind direkt verfuegbar; Kreis- oder Gemeindeergebnisse werden dort nicht bereitgestellt.
-- Einkommen: Statistikportal/VGR der Laender bietet Einkommen der privaten Haushalte fuer Kreise und kreisfreie Staedte als Excel-Datei an.
-- Kneipen und Schwimmbaeder: OpenStreetMap/Overpass ist oeffentlich nutzbar; hier braucht der Import Zaehllogik plus Aggregation auf Kreisgrenzen.
+- Bundestagswahl 2025: Die Bundeswahlleiterin bietet Open Data im CSV-Format an. Wahlkreiswerte sind direkt importiert; Kreis- oder Gemeindeergebnisse werden dort nicht bereitgestellt, daher ist die Kartenzuordnung eine Namensnaeherung.
+- Einkommen: Statistikportal/VGR der Laender liefert verfuegbares Einkommen je Einwohner 2023 sowie Einwohnerzahlen auf Kreisebene.
+- Kneipen und Schwimmbaeder: OpenStreetMap/Overpass-Nodes wurden gezaehlt und mit Einwohnerzahlen auf Werte pro 100.000 Einwohner umgerechnet. OSM-Polygone sind im MVP noch nicht enthalten.
 
 Details stehen in `IDEAS.md` und maschinenlesbar in `docs/data/metrics.json`.
+Die importierten Werte stehen in `docs/data/real_metrics.json`. Der Importer liegt in `scripts/build_real_metrics.py`; Overpass-Rohdaten werden mit `scripts/overpass_fetch.py` erzeugt.
 
 ## Lokal starten
 
@@ -66,7 +68,8 @@ korrelator-3000/
 |  |- app.js
 |  `- data/
 |     |- kreise.geojson
-|     `- metrics.json
+|     |- metrics.json
+|     `- real_metrics.json
 |- IDEAS.md
 |- AGENTS.md
 |- CODEX_BRIEFING.md
@@ -77,7 +80,6 @@ korrelator-3000/
 
 ## Naechste Schritte
 
-1. Einkommens-Excel vom Statistikportal in `data/processed/` als JSON fuer Kreise konvertieren.
-2. Bundeswahlleiterin-CSV fuer AfD/SPD importieren und entscheiden: Wahlkreise separat anzeigen, auf Kreise naehern oder bessere Landes-/Kommunalquellen nutzen.
-3. Overpass-Importer fuer Kneipen und Schwimmbaeder bauen.
-4. Platzhalterwerte in `docs/app.js` durch echte Werte aus `docs/data/processed_metrics.json` ersetzen.
+1. GADM-Kreisgeometrie durch BKG/VG250 oder eine andere Kreisdatei mit amtlichem Kreisschluessel ersetzen.
+2. Wahlwerte entweder als eigene Wahlkreis-Karte anzeigen oder mit einer echten Wahlkreis-zu-Kreis-Bruecke mappen.
+3. OSM-Importer um Ways/Relations erweitern, damit polygonal gemappte Schwimmbaeder und Kneipen mitgezaehlt werden.

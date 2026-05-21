@@ -1,0 +1,4392 @@
+{
+  "generated_at": "2026-05-21",
+  "sources": {
+    "einkommen": "Statistikportal/VGRdL Reihe 2 Band 3, Berechnungsstand Februar 2025, Jahr 2023",
+    "population": "Statistikportal/VGRdL Reihe 2 Band 3, Einwohnerinnen und Einwohner, Jahr 2023",
+    "wahl": "Bundeswahlleiterin kerg2.csv, Bundestagswahl 2025, Zweitstimmenanteile; auf GADM-Kreise per Namensnaeherung gemappt",
+    "osm": "OpenStreetMap Overpass, Nodes in Deutschland-Bounding-Box, abgerufen am 2026-05-21"
+  },
+  "notes": [
+    "Die vorhandene GADM-Kreisdatei enthaelt keine amtlichen Kreisschluessel. Deshalb werden Einkommen/Einwohner per Name+Bundesland+Kreistyp gemappt.",
+    "Bundestagswahlwerte liegen offiziell auf Wahlkreisebene vor und werden hier als Namensnaeherung an Kreise gehaengt.",
+    "OSM-Werte zaehlen Nodes fuer Kneipen/Bars/Biergaerten bzw. Schwimmbaeder; OSM-Polygone sind im MVP noch nicht enthalten."
+  ],
+  "coverage": {
+    "einkommen": 383,
+    "population": 383,
+    "kneipen_count": 434,
+    "schwimmbaeder_count": 434,
+    "kneipendichte": 383,
+    "schwimmbaeder": 383,
+    "afd_btw2025": 331,
+    "spd_btw2025": 331
+  },
+  "raw_counts": {
+    "osm_kneipen_elements": 35405,
+    "osm_schwimmbaeder_elements": 7223
+  },
+  "ranges": {
+    "kneipendichte": [
+      2.4,
+      123.9
+    ],
+    "einkommen": [
+      20138,
+      44520
+    ],
+    "afd_btw2025": [
+      6.9,
+      46.7
+    ],
+    "spd_btw2025": [
+      6.0,
+      28.6
+    ],
+    "schwimmbaeder": [
+      0.0,
+      218.7
+    ]
+  },
+  "values": {
+    "0": {
+      "einkommen": 26329,
+      "population": 173730,
+      "kneipen_count": 29,
+      "schwimmbaeder_count": 10,
+      "kneipendichte": 16.7,
+      "schwimmbaeder": 5.8,
+      "afd_btw2025": 16.2,
+      "spd_btw2025": 23.8
+    },
+    "1": {
+      "einkommen": 28239,
+      "population": 167163,
+      "kneipen_count": 79,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 47.3,
+      "schwimmbaeder": 0.6,
+      "afd_btw2025": 14.8,
+      "spd_btw2025": 23.3
+    },
+    "2": {
+      "einkommen": 28239,
+      "population": 167163,
+      "kneipen_count": 49,
+      "schwimmbaeder_count": 11,
+      "kneipendichte": 29.3,
+      "schwimmbaeder": 6.6,
+      "afd_btw2025": 14.8,
+      "spd_btw2025": 23.3
+    },
+    "3": {
+      "einkommen": 30312,
+      "population": 147338,
+      "kneipen_count": 46,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 31.2,
+      "schwimmbaeder": 3.4,
+      "afd_btw2025": 20.6,
+      "spd_btw2025": 15.6
+    },
+    "4": {
+      "einkommen": 27305,
+      "population": 89665,
+      "kneipen_count": 24,
+      "schwimmbaeder_count": 7,
+      "kneipendichte": 26.8,
+      "schwimmbaeder": 7.8,
+      "afd_btw2025": 19.5,
+      "spd_btw2025": 23.8
+    },
+    "5": {
+      "einkommen": 22763,
+      "population": 76168,
+      "kneipen_count": 33,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 43.3,
+      "schwimmbaeder": 1.3,
+      "afd_btw2025": 20.2,
+      "spd_btw2025": 25.5
+    },
+    "6": {
+      "einkommen": 26567,
+      "population": 58378,
+      "kneipen_count": 14,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 24.0,
+      "schwimmbaeder": 1.7,
+      "afd_btw2025": 20.2,
+      "spd_btw2025": 25.5
+    },
+    "7": {
+      "einkommen": 24836,
+      "population": 366064,
+      "kneipen_count": 98,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 26.8,
+      "schwimmbaeder": 1.4,
+      "afd_btw2025": 17.4,
+      "spd_btw2025": 25.0
+    },
+    "8": {
+      "einkommen": 24200,
+      "population": 594394,
+      "kneipen_count": 155,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 26.1,
+      "schwimmbaeder": 0.3,
+      "afd_btw2025": 16.9,
+      "spd_btw2025": 23.7
+    },
+    "9": {
+      "einkommen": 30218,
+      "population": 325070,
+      "kneipen_count": 71,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 21.8,
+      "schwimmbaeder": 1.5,
+      "afd_btw2025": 18.9,
+      "spd_btw2025": 22.6
+    },
+    "10": {
+      "einkommen": 23956,
+      "population": 190137,
+      "kneipen_count": 48,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 25.2,
+      "schwimmbaeder": 1.1,
+      "afd_btw2025": 20.9,
+      "spd_btw2025": 21.4
+    },
+    "11": {
+      "einkommen": 23244,
+      "population": 180805,
+      "kneipen_count": 32,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 17.7,
+      "schwimmbaeder": 1.7,
+      "afd_btw2025": 21.1,
+      "spd_btw2025": 23.1
+    },
+    "12": {
+      "einkommen": 21927,
+      "population": 157632,
+      "kneipen_count": 34,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 21.6,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 20.9,
+      "spd_btw2025": 25.9
+    },
+    "13": {
+      "einkommen": 30632,
+      "population": 261711,
+      "kneipen_count": 86,
+      "schwimmbaeder_count": 10,
+      "kneipendichte": 32.9,
+      "schwimmbaeder": 3.8,
+      "afd_btw2025": 16.7,
+      "spd_btw2025": 16.4
+    },
+    "14": {
+      "einkommen": 29550,
+      "population": 409463,
+      "kneipen_count": 59,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 14.4,
+      "schwimmbaeder": 1.2,
+      "afd_btw2025": 20.9,
+      "spd_btw2025": 17.4
+    },
+    "15": {
+      "einkommen": 33232,
+      "population": 134386,
+      "kneipen_count": 22,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 16.4,
+      "schwimmbaeder": 2.2,
+      "afd_btw2025": 20.5,
+      "spd_btw2025": 16.4
+    },
+    "16": {
+      "einkommen": 28655,
+      "population": 276881,
+      "kneipen_count": 37,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 13.4,
+      "schwimmbaeder": 0.7,
+      "afd_btw2025": 20.3,
+      "spd_btw2025": 19.9
+    },
+    "17": {
+      "einkommen": 30461,
+      "population": 320034,
+      "kneipen_count": 111,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 34.7,
+      "schwimmbaeder": 1.6,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "18": {
+      "einkommen": 30699,
+      "population": 433383,
+      "kneipen_count": 143,
+      "schwimmbaeder_count": 9,
+      "kneipendichte": 33.0,
+      "schwimmbaeder": 2.1,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "19": {
+      "einkommen": 29413,
+      "population": 203778,
+      "kneipen_count": 57,
+      "schwimmbaeder_count": 6,
+      "kneipendichte": 28.0,
+      "schwimmbaeder": 2.9,
+      "afd_btw2025": 24.2,
+      "spd_btw2025": 13.5
+    },
+    "20": {
+      "einkommen": 31390,
+      "population": 633175,
+      "kneipen_count": 352,
+      "schwimmbaeder_count": 6,
+      "kneipendichte": 55.6,
+      "schwimmbaeder": 0.9,
+      "afd_btw2025": 11.6,
+      "spd_btw2025": 15.6
+    },
+    "21": {
+      "einkommen": 29529,
+      "population": 203175,
+      "kneipen_count": 42,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 20.7,
+      "schwimmbaeder": 1.5,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "22": {
+      "einkommen": 30442,
+      "population": 207358,
+      "kneipen_count": 56,
+      "schwimmbaeder_count": 7,
+      "kneipendichte": 27.0,
+      "schwimmbaeder": 3.4,
+      "afd_btw2025": 23.2,
+      "spd_btw2025": 10.4
+    },
+    "23": {
+      "einkommen": 32455,
+      "population": 223456,
+      "kneipen_count": 60,
+      "schwimmbaeder_count": 10,
+      "kneipendichte": 26.9,
+      "schwimmbaeder": 4.5,
+      "afd_btw2025": 18.9,
+      "spd_btw2025": 13.0
+    },
+    "24": {
+      "einkommen": 30135,
+      "population": 292030,
+      "kneipen_count": 86,
+      "schwimmbaeder_count": 30,
+      "kneipendichte": 29.4,
+      "schwimmbaeder": 10.3,
+      "afd_btw2025": 19.0,
+      "spd_btw2025": 11.7
+    },
+    "25": {
+      "einkommen": 30012,
+      "population": 292660,
+      "kneipen_count": 116,
+      "schwimmbaeder_count": 7,
+      "kneipendichte": 39.6,
+      "schwimmbaeder": 2.4,
+      "afd_btw2025": 21.0,
+      "spd_btw2025": 13.1
+    },
+    "26": {
+      "einkommen": 28559,
+      "population": 134152,
+      "kneipen_count": 45,
+      "schwimmbaeder_count": 11,
+      "kneipendichte": 33.5,
+      "schwimmbaeder": 8.2,
+      "afd_btw2025": 26.2,
+      "spd_btw2025": 11.0
+    },
+    "27": {
+      "einkommen": 29420,
+      "population": 233726,
+      "kneipen_count": 70,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 29.9,
+      "schwimmbaeder": 2.1,
+      "afd_btw2025": 16.1,
+      "spd_btw2025": 13.9
+    },
+    "28": {
+      "einkommen": 32974,
+      "population": 129435,
+      "kneipen_count": 43,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 33.2,
+      "schwimmbaeder": 0.8,
+      "afd_btw2025": 19.3,
+      "spd_btw2025": 13.5
+    },
+    "29": {
+      "einkommen": 30626,
+      "population": 193474,
+      "kneipen_count": 55,
+      "schwimmbaeder_count": 8,
+      "kneipendichte": 28.4,
+      "schwimmbaeder": 4.1,
+      "afd_btw2025": 26.2,
+      "spd_btw2025": 11.0
+    },
+    "30": {
+      "einkommen": 27013,
+      "population": 42266,
+      "kneipen_count": 12,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 28.4,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 21.5,
+      "spd_btw2025": 12.1
+    },
+    "31": {
+      "einkommen": 27013,
+      "population": 42266,
+      "kneipen_count": 45,
+      "schwimmbaeder_count": 11,
+      "kneipendichte": 106.5,
+      "schwimmbaeder": 26.0,
+      "afd_btw2025": 21.5,
+      "spd_btw2025": 12.1
+    },
+    "32": {
+      "einkommen": 37136,
+      "population": 141256,
+      "kneipen_count": 17,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 12.0,
+      "schwimmbaeder": 2.1,
+      "afd_btw2025": 14.5,
+      "spd_btw2025": 13.9
+    },
+    "33": {
+      "einkommen": 30114,
+      "population": 117184,
+      "kneipen_count": 40,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 34.1,
+      "schwimmbaeder": 0.9,
+      "afd_btw2025": 14.5,
+      "spd_btw2025": 13.9
+    },
+    "34": {
+      "einkommen": 32437,
+      "population": 131733,
+      "kneipen_count": 28,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 21.3,
+      "schwimmbaeder": 0.8,
+      "afd_btw2025": 18.8,
+      "spd_btw2025": 14.2
+    },
+    "35": {
+      "einkommen": 30491,
+      "population": 271071,
+      "kneipen_count": 51,
+      "schwimmbaeder_count": 8,
+      "kneipendichte": 18.8,
+      "schwimmbaeder": 3.0,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "36": {
+      "einkommen": 28955,
+      "population": 171694,
+      "kneipen_count": 43,
+      "schwimmbaeder_count": 4,
+      "kneipendichte": 25.0,
+      "schwimmbaeder": 2.3,
+      "afd_btw2025": 19.5,
+      "spd_btw2025": 15.5
+    },
+    "37": {
+      "einkommen": 27158,
+      "population": 236692,
+      "kneipen_count": 83,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 35.1,
+      "schwimmbaeder": 1.3,
+      "afd_btw2025": 10.4,
+      "spd_btw2025": 15.3
+    },
+    "38": {
+      "einkommen": 29733,
+      "population": 293372,
+      "kneipen_count": 85,
+      "schwimmbaeder_count": 8,
+      "kneipendichte": 29.0,
+      "schwimmbaeder": 2.7,
+      "afd_btw2025": 18.3,
+      "spd_btw2025": 13.3
+    },
+    "39": {
+      "einkommen": 31838,
+      "population": 233968,
+      "kneipen_count": 43,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 18.4,
+      "schwimmbaeder": 0.9,
+      "afd_btw2025": 18.2,
+      "spd_btw2025": 16.0
+    },
+    "40": {
+      "einkommen": 28373,
+      "population": 443138,
+      "kneipen_count": 160,
+      "schwimmbaeder_count": 38,
+      "kneipendichte": 36.1,
+      "schwimmbaeder": 8.6,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "41": {
+      "einkommen": 30086,
+      "population": 142778,
+      "kneipen_count": 52,
+      "schwimmbaeder_count": 13,
+      "kneipendichte": 36.4,
+      "schwimmbaeder": 9.1,
+      "afd_btw2025": 27.1,
+      "spd_btw2025": 10.8
+    },
+    "42": {
+      "einkommen": 28993,
+      "population": 217981,
+      "kneipen_count": 80,
+      "schwimmbaeder_count": 6,
+      "kneipendichte": 36.7,
+      "schwimmbaeder": 2.8,
+      "afd_btw2025": 23.8,
+      "spd_btw2025": 12.9
+    },
+    "43": {
+      "einkommen": 31632,
+      "population": 145508,
+      "kneipen_count": 41,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 28.2,
+      "schwimmbaeder": 1.4,
+      "afd_btw2025": 27.1,
+      "spd_btw2025": 10.8
+    },
+    "44": {
+      "einkommen": 29369,
+      "population": 173926,
+      "kneipen_count": 38,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 21.8,
+      "schwimmbaeder": 1.1,
+      "afd_btw2025": 19.1,
+      "spd_btw2025": 14.3
+    },
+    "45": {
+      "einkommen": 35144,
+      "population": 57223,
+      "kneipen_count": 10,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 17.5,
+      "schwimmbaeder": 1.7,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "46": {
+      "einkommen": 29185,
+      "population": 163346,
+      "kneipen_count": 46,
+      "schwimmbaeder_count": 38,
+      "kneipendichte": 28.2,
+      "schwimmbaeder": 23.3,
+      "afd_btw2025": 25.6,
+      "spd_btw2025": 12.2
+    },
+    "47": {
+      "einkommen": 30969,
+      "population": 202973,
+      "kneipen_count": 41,
+      "schwimmbaeder_count": 84,
+      "kneipendichte": 20.2,
+      "schwimmbaeder": 41.4,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "48": {
+      "einkommen": 30507,
+      "population": 121374,
+      "kneipen_count": 32,
+      "schwimmbaeder_count": 10,
+      "kneipendichte": 26.4,
+      "schwimmbaeder": 8.2,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "49": {
+      "einkommen": 30764,
+      "population": 162617,
+      "kneipen_count": 75,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 46.1,
+      "schwimmbaeder": 3.1,
+      "afd_btw2025": 12.1,
+      "spd_btw2025": 17.0
+    },
+    "50": {
+      "einkommen": 28467,
+      "population": 309336,
+      "kneipen_count": 139,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 44.9,
+      "schwimmbaeder": 0.6,
+      "afd_btw2025": 16.3,
+      "spd_btw2025": 15.3
+    },
+    "51": {
+      "einkommen": 28467,
+      "population": 309336,
+      "kneipen_count": 100,
+      "schwimmbaeder_count": 112,
+      "kneipendichte": 32.3,
+      "schwimmbaeder": 36.2,
+      "afd_btw2025": 16.3,
+      "spd_btw2025": 15.3
+    },
+    "52": {
+      "einkommen": 26853,
+      "population": 316216,
+      "kneipen_count": 258,
+      "schwimmbaeder_count": 18,
+      "kneipendichte": 81.6,
+      "schwimmbaeder": 5.7,
+      "afd_btw2025": 17.6,
+      "spd_btw2025": 18.2
+    },
+    "53": {
+      "einkommen": 28109,
+      "population": 145782,
+      "kneipen_count": 18,
+      "schwimmbaeder_count": 9,
+      "kneipendichte": 12.3,
+      "schwimmbaeder": 6.2,
+      "afd_btw2025": 21.5,
+      "spd_btw2025": 14.5
+    },
+    "54": {
+      "einkommen": 26823,
+      "population": 128421,
+      "kneipen_count": 50,
+      "schwimmbaeder_count": 8,
+      "kneipendichte": 38.9,
+      "schwimmbaeder": 6.2,
+      "afd_btw2025": 25.4,
+      "spd_btw2025": 13.2
+    },
+    "55": {
+      "einkommen": 28505,
+      "population": 235262,
+      "kneipen_count": 57,
+      "schwimmbaeder_count": 12,
+      "kneipendichte": 24.2,
+      "schwimmbaeder": 5.1,
+      "afd_btw2025": 22.6,
+      "spd_btw2025": 14.5
+    },
+    "56": {
+      "einkommen": 31349,
+      "population": 555999,
+      "kneipen_count": 123,
+      "schwimmbaeder_count": 44,
+      "kneipendichte": 22.1,
+      "schwimmbaeder": 7.9,
+      "afd_btw2025": 20.5,
+      "spd_btw2025": 15.1
+    },
+    "57": {
+      "einkommen": 31100,
+      "population": 399923,
+      "kneipen_count": 139,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 34.8,
+      "schwimmbaeder": 0.8,
+      "afd_btw2025": 17.5,
+      "spd_btw2025": 14.4
+    },
+    "58": {
+      "einkommen": 31076,
+      "population": 541404,
+      "kneipen_count": 205,
+      "schwimmbaeder_count": 14,
+      "kneipendichte": 37.9,
+      "schwimmbaeder": 2.6,
+      "afd_btw2025": 16.1,
+      "spd_btw2025": 15.5
+    },
+    "59": {
+      "einkommen": 30026,
+      "population": 262782,
+      "kneipen_count": 96,
+      "schwimmbaeder_count": 8,
+      "kneipendichte": 36.5,
+      "schwimmbaeder": 3.0,
+      "afd_btw2025": 23.3,
+      "spd_btw2025": 14.4
+    },
+    "60": {
+      "einkommen": 28229,
+      "population": 135253,
+      "kneipen_count": 44,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 32.5,
+      "schwimmbaeder": 3.7,
+      "afd_btw2025": 23.0,
+      "spd_btw2025": 14.1
+    },
+    "61": {
+      "einkommen": 40646,
+      "population": 129214,
+      "kneipen_count": 70,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 54.2,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 25.5,
+      "spd_btw2025": 14.3
+    },
+    "62": {
+      "einkommen": 40646,
+      "population": 129214,
+      "kneipen_count": 94,
+      "schwimmbaeder_count": 6,
+      "kneipendichte": 72.7,
+      "schwimmbaeder": 4.6,
+      "afd_btw2025": 25.5,
+      "spd_btw2025": 14.3
+    },
+    "63": {
+      "einkommen": 30223,
+      "population": 115430,
+      "kneipen_count": 31,
+      "schwimmbaeder_count": 11,
+      "kneipendichte": 26.9,
+      "schwimmbaeder": 9.5,
+      "afd_btw2025": 25.1,
+      "spd_btw2025": 13.2
+    },
+    "64": {
+      "einkommen": 31769,
+      "population": 552370,
+      "kneipen_count": 156,
+      "schwimmbaeder_count": 9,
+      "kneipendichte": 28.2,
+      "schwimmbaeder": 1.6,
+      "afd_btw2025": 16.9,
+      "spd_btw2025": 15.1
+    },
+    "65": {
+      "einkommen": 28811,
+      "population": 135058,
+      "kneipen_count": 35,
+      "schwimmbaeder_count": 7,
+      "kneipendichte": 25.9,
+      "schwimmbaeder": 5.2,
+      "afd_btw2025": 23.6,
+      "spd_btw2025": 13.3
+    },
+    "66": {
+      "einkommen": 32437,
+      "population": 131733,
+      "kneipen_count": 10,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 7.6,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 18.8,
+      "spd_btw2025": 14.2
+    },
+    "67": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 29,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "68": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 259,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "69": {
+      "einkommen": 32414,
+      "population": 172803,
+      "kneipen_count": 66,
+      "schwimmbaeder_count": 6,
+      "kneipendichte": 38.2,
+      "schwimmbaeder": 3.5,
+      "afd_btw2025": 16.8,
+      "spd_btw2025": 11.2
+    },
+    "70": {
+      "einkommen": 31572,
+      "population": 129145,
+      "kneipen_count": 38,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 29.4,
+      "schwimmbaeder": 0.8,
+      "afd_btw2025": 18.0,
+      "spd_btw2025": 13.4
+    },
+    "71": {
+      "einkommen": 32497,
+      "population": 41304,
+      "kneipen_count": 16,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 38.7,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "72": {
+      "einkommen": 28148,
+      "population": 97198,
+      "kneipen_count": 42,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 43.2,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "73": {
+      "einkommen": 31521,
+      "population": 122625,
+      "kneipen_count": 31,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 25.3,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 29.3,
+      "spd_btw2025": 8.1
+    },
+    "74": {
+      "einkommen": 29578,
+      "population": 100892,
+      "kneipen_count": 29,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 28.7,
+      "schwimmbaeder": 1.0,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "75": {
+      "einkommen": 27573,
+      "population": 79445,
+      "kneipen_count": 30,
+      "schwimmbaeder_count": 44,
+      "kneipendichte": 37.8,
+      "schwimmbaeder": 55.4,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "76": {
+      "einkommen": 29417,
+      "population": 126120,
+      "kneipen_count": 39,
+      "schwimmbaeder_count": 4,
+      "kneipendichte": 30.9,
+      "schwimmbaeder": 3.2,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "77": {
+      "einkommen": 31417,
+      "population": 75365,
+      "kneipen_count": 26,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 34.5,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 22.4,
+      "spd_btw2025": 9.5
+    },
+    "78": {
+      "einkommen": 31417,
+      "population": 75365,
+      "kneipen_count": 35,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 46.4,
+      "schwimmbaeder": 2.7,
+      "afd_btw2025": 22.4,
+      "spd_btw2025": 9.5
+    },
+    "79": {
+      "einkommen": 26409,
+      "population": 54154,
+      "kneipen_count": 25,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 46.2,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 25.5,
+      "spd_btw2025": 9.7
+    },
+    "80": {
+      "einkommen": 26409,
+      "population": 54154,
+      "kneipen_count": 31,
+      "schwimmbaeder_count": 74,
+      "kneipendichte": 57.2,
+      "schwimmbaeder": 136.6,
+      "afd_btw2025": 25.5,
+      "spd_btw2025": 9.7
+    },
+    "81": {
+      "einkommen": 27771,
+      "population": 77988,
+      "kneipen_count": 29,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 37.2,
+      "schwimmbaeder": 3.8,
+      "afd_btw2025": 18.7,
+      "spd_btw2025": 11.1
+    },
+    "82": {
+      "einkommen": 29379,
+      "population": 124674,
+      "kneipen_count": 19,
+      "schwimmbaeder_count": 6,
+      "kneipendichte": 15.2,
+      "schwimmbaeder": 4.8,
+      "afd_btw2025": 26.1,
+      "spd_btw2025": 7.7
+    },
+    "83": {
+      "einkommen": 29361,
+      "population": 103987,
+      "kneipen_count": 17,
+      "schwimmbaeder_count": 7,
+      "kneipendichte": 16.3,
+      "schwimmbaeder": 6.7,
+      "afd_btw2025": 27.7,
+      "spd_btw2025": 8.0
+    },
+    "84": {
+      "einkommen": 27470,
+      "population": 49470,
+      "kneipen_count": 30,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 60.6,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 27.7,
+      "spd_btw2025": 8.0
+    },
+    "85": {
+      "einkommen": 29269,
+      "population": 114129,
+      "kneipen_count": 27,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 23.7,
+      "schwimmbaeder": 1.8,
+      "afd_btw2025": 24.2,
+      "spd_btw2025": 8.4
+    },
+    "86": {
+      "einkommen": 33076,
+      "population": 129847,
+      "kneipen_count": 29,
+      "schwimmbaeder_count": 17,
+      "kneipendichte": 22.3,
+      "schwimmbaeder": 13.1,
+      "afd_btw2025": 17.2,
+      "spd_btw2025": 9.1
+    },
+    "87": {
+      "einkommen": 29240,
+      "population": 107991,
+      "kneipen_count": 32,
+      "schwimmbaeder_count": 4,
+      "kneipendichte": 29.6,
+      "schwimmbaeder": 3.7,
+      "afd_btw2025": 16.8,
+      "spd_btw2025": 11.2
+    },
+    "88": {
+      "einkommen": 32222,
+      "population": 157398,
+      "kneipen_count": 29,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 18.4,
+      "schwimmbaeder": 0.6,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "89": {
+      "einkommen": 35045,
+      "population": 147195,
+      "kneipen_count": 37,
+      "schwimmbaeder_count": 9,
+      "kneipendichte": 25.1,
+      "schwimmbaeder": 6.1,
+      "afd_btw2025": 16.5,
+      "spd_btw2025": 10.1
+    },
+    "90": {
+      "einkommen": 29918,
+      "population": 136078,
+      "kneipen_count": 45,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 33.1,
+      "schwimmbaeder": 3.7,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "91": {
+      "einkommen": 31800,
+      "population": 142110,
+      "kneipen_count": 43,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 30.3,
+      "schwimmbaeder": 0.7,
+      "afd_btw2025": 16.5,
+      "spd_btw2025": 10.1
+    },
+    "92": {
+      "einkommen": 30400,
+      "population": 185355,
+      "kneipen_count": 57,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 30.8,
+      "schwimmbaeder": 2.7,
+      "afd_btw2025": 19.1,
+      "spd_btw2025": 9.9
+    },
+    "93": {
+      "einkommen": 32880,
+      "population": 222272,
+      "kneipen_count": 36,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 16.2,
+      "schwimmbaeder": 0.9,
+      "afd_btw2025": 15.0,
+      "spd_btw2025": 11.6
+    },
+    "94": {
+      "einkommen": 32413,
+      "population": 88794,
+      "kneipen_count": 51,
+      "schwimmbaeder_count": 4,
+      "kneipendichte": 57.4,
+      "schwimmbaeder": 4.5,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "95": {
+      "einkommen": 28643,
+      "population": 141669,
+      "kneipen_count": 32,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 22.6,
+      "schwimmbaeder": 2.1,
+      "afd_btw2025": 21.4,
+      "spd_btw2025": 10.1
+    },
+    "96": {
+      "einkommen": 32759,
+      "population": 123672,
+      "kneipen_count": 41,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 33.2,
+      "schwimmbaeder": 2.4,
+      "afd_btw2025": 13.5,
+      "spd_btw2025": 11.5
+    },
+    "97": {
+      "einkommen": 40748,
+      "population": 101399,
+      "kneipen_count": 42,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 41.4,
+      "schwimmbaeder": 4.9,
+      "afd_btw2025": 17.2,
+      "spd_btw2025": 9.1
+    },
+    "98": {
+      "einkommen": 30128,
+      "population": 120305,
+      "kneipen_count": 17,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 14.1,
+      "schwimmbaeder": 1.7,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "99": {
+      "einkommen": 38190,
+      "population": 1511435,
+      "kneipen_count": 66,
+      "schwimmbaeder_count": 8,
+      "kneipendichte": 4.4,
+      "schwimmbaeder": 0.5,
+      "afd_btw2025": 9.8,
+      "spd_btw2025": 14.9
+    },
+    "100": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 595,
+      "schwimmbaeder_count": 17,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "101": {
+      "einkommen": 29184,
+      "population": 100533,
+      "kneipen_count": 32,
+      "schwimmbaeder_count": 6,
+      "kneipendichte": 31.8,
+      "schwimmbaeder": 6.0,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "102": {
+      "einkommen": 31151,
+      "population": 132524,
+      "kneipen_count": 28,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 21.1,
+      "schwimmbaeder": 0.8,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "103": {
+      "einkommen": 28219,
+      "population": 64798,
+      "kneipen_count": 28,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 43.2,
+      "schwimmbaeder": 3.1,
+      "afd_btw2025": 19.6,
+      "spd_btw2025": 9.6
+    },
+    "104": {
+      "einkommen": 28219,
+      "population": 64798,
+      "kneipen_count": 48,
+      "schwimmbaeder_count": 25,
+      "kneipendichte": 74.1,
+      "schwimmbaeder": 38.6,
+      "afd_btw2025": 19.6,
+      "spd_btw2025": 9.6
+    },
+    "105": {
+      "einkommen": 44520,
+      "population": 138926,
+      "kneipen_count": 27,
+      "schwimmbaeder_count": 6,
+      "kneipendichte": 19.4,
+      "schwimmbaeder": 4.3,
+      "afd_btw2025": 13.5,
+      "spd_btw2025": 11.5
+    },
+    "106": {
+      "einkommen": 31371,
+      "population": 181271,
+      "kneipen_count": 52,
+      "schwimmbaeder_count": 21,
+      "kneipendichte": 28.7,
+      "schwimmbaeder": 11.6,
+      "afd_btw2025": 20.1,
+      "spd_btw2025": 9.8
+    },
+    "107": {
+      "einkommen": 31902,
+      "population": 138805,
+      "kneipen_count": 31,
+      "schwimmbaeder_count": 10,
+      "kneipendichte": 22.3,
+      "schwimmbaeder": 7.2,
+      "afd_btw2025": 16.9,
+      "spd_btw2025": 9.7
+    },
+    "108": {
+      "einkommen": 27752,
+      "population": 80258,
+      "kneipen_count": 41,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 51.1,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 19.3,
+      "spd_btw2025": 11.3
+    },
+    "109": {
+      "einkommen": 27752,
+      "population": 80258,
+      "kneipen_count": 35,
+      "schwimmbaeder_count": 8,
+      "kneipendichte": 43.6,
+      "schwimmbaeder": 10.0,
+      "afd_btw2025": 19.3,
+      "spd_btw2025": 11.3
+    },
+    "110": {
+      "einkommen": 27252,
+      "population": 74707,
+      "kneipen_count": 36,
+      "schwimmbaeder_count": 16,
+      "kneipendichte": 48.2,
+      "schwimmbaeder": 21.4,
+      "afd_btw2025": 20.0,
+      "spd_btw2025": 12.3
+    },
+    "111": {
+      "einkommen": 27252,
+      "population": 74707,
+      "kneipen_count": 57,
+      "schwimmbaeder_count": 24,
+      "kneipendichte": 76.3,
+      "schwimmbaeder": 32.1,
+      "afd_btw2025": 20.0,
+      "spd_btw2025": 12.3
+    },
+    "112": {
+      "einkommen": 30694,
+      "population": 41991,
+      "kneipen_count": 17,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 40.5,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 22.2,
+      "spd_btw2025": 14.3
+    },
+    "113": {
+      "einkommen": 30694,
+      "population": 41991,
+      "kneipen_count": 26,
+      "schwimmbaeder_count": 7,
+      "kneipendichte": 61.9,
+      "schwimmbaeder": 16.7,
+      "afd_btw2025": 22.2,
+      "spd_btw2025": 14.3
+    },
+    "114": {
+      "einkommen": 30791,
+      "population": 118337,
+      "kneipen_count": 61,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 51.5,
+      "schwimmbaeder": 1.7,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "115": {
+      "einkommen": 25503,
+      "population": 46810,
+      "kneipen_count": 58,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 123.9,
+      "schwimmbaeder": 2.1,
+      "afd_btw2025": 24.3,
+      "spd_btw2025": 13.5
+    },
+    "116": {
+      "einkommen": 25503,
+      "population": 46810,
+      "kneipen_count": 56,
+      "schwimmbaeder_count": 21,
+      "kneipendichte": 119.6,
+      "schwimmbaeder": 44.9,
+      "afd_btw2025": 24.3,
+      "spd_btw2025": 13.5
+    },
+    "117": {
+      "einkommen": 29972,
+      "population": 66344,
+      "kneipen_count": 38,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 57.3,
+      "schwimmbaeder": 3.0,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "118": {
+      "einkommen": 29647,
+      "population": 71805,
+      "kneipen_count": 28,
+      "schwimmbaeder_count": 14,
+      "kneipendichte": 39.0,
+      "schwimmbaeder": 19.5,
+      "afd_btw2025": 23.4,
+      "spd_btw2025": 10.9
+    },
+    "119": {
+      "einkommen": 27980,
+      "population": 67442,
+      "kneipen_count": 31,
+      "schwimmbaeder_count": 7,
+      "kneipendichte": 46.0,
+      "schwimmbaeder": 10.4,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "120": {
+      "einkommen": 33183,
+      "population": 71989,
+      "kneipen_count": 40,
+      "schwimmbaeder_count": 16,
+      "kneipendichte": 55.6,
+      "schwimmbaeder": 22.2,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "121": {
+      "einkommen": 28716,
+      "population": 104675,
+      "kneipen_count": 36,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 34.4,
+      "schwimmbaeder": 2.9,
+      "afd_btw2025": 20.7,
+      "spd_btw2025": 11.0
+    },
+    "122": {
+      "einkommen": 27129,
+      "population": 42605,
+      "kneipen_count": 24,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 56.3,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 20.7,
+      "spd_btw2025": 11.0
+    },
+    "123": {
+      "einkommen": 28874,
+      "population": 130570,
+      "kneipen_count": 38,
+      "schwimmbaeder_count": 12,
+      "kneipendichte": 29.1,
+      "schwimmbaeder": 9.2,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "124": {
+      "einkommen": 30658,
+      "population": 138682,
+      "kneipen_count": 35,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 25.2,
+      "schwimmbaeder": 3.6,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "125": {
+      "einkommen": 29184,
+      "population": 100533,
+      "kneipen_count": 69,
+      "schwimmbaeder_count": 42,
+      "kneipendichte": 68.6,
+      "schwimmbaeder": 41.8,
+      "afd_btw2025": 23.2,
+      "spd_btw2025": 10.7
+    },
+    "126": {
+      "einkommen": 29370,
+      "population": 158454,
+      "kneipen_count": 66,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 41.7,
+      "schwimmbaeder": 3.2,
+      "afd_btw2025": 18.7,
+      "spd_btw2025": 11.1
+    },
+    "127": {
+      "einkommen": 29370,
+      "population": 158454,
+      "kneipen_count": 35,
+      "schwimmbaeder_count": 15,
+      "kneipendichte": 22.1,
+      "schwimmbaeder": 9.5,
+      "afd_btw2025": 18.7,
+      "spd_btw2025": 11.1
+    },
+    "128": {
+      "einkommen": 28159,
+      "population": 151998,
+      "kneipen_count": 34,
+      "schwimmbaeder_count": 39,
+      "kneipendichte": 22.4,
+      "schwimmbaeder": 25.7,
+      "afd_btw2025": 28.2,
+      "spd_btw2025": 9.3
+    },
+    "129": {
+      "einkommen": 31130,
+      "population": 72160,
+      "kneipen_count": 28,
+      "schwimmbaeder_count": 27,
+      "kneipendichte": 38.8,
+      "schwimmbaeder": 37.4,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "130": {
+      "einkommen": 27127,
+      "population": 43120,
+      "kneipen_count": 42,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 97.4,
+      "schwimmbaeder": 2.3,
+      "afd_btw2025": 24.3,
+      "spd_btw2025": 11.7
+    },
+    "131": {
+      "einkommen": 32041,
+      "population": 137971,
+      "kneipen_count": 28,
+      "schwimmbaeder_count": 4,
+      "kneipendichte": 20.3,
+      "schwimmbaeder": 2.9,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "132": {
+      "einkommen": 25528,
+      "population": 302092,
+      "kneipen_count": 111,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 36.7,
+      "schwimmbaeder": 0.3,
+      "afd_btw2025": 18.5,
+      "spd_btw2025": 12.0
+    },
+    "133": {
+      "einkommen": 25528,
+      "population": 302092,
+      "kneipen_count": 58,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 19.2,
+      "schwimmbaeder": 1.7,
+      "afd_btw2025": 18.5,
+      "spd_btw2025": 12.0
+    },
+    "134": {
+      "einkommen": 30577,
+      "population": 99625,
+      "kneipen_count": 27,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 27.1,
+      "schwimmbaeder": 5.0,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "135": {
+      "einkommen": 32580,
+      "population": 137554,
+      "kneipen_count": 47,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 34.2,
+      "schwimmbaeder": 3.6,
+      "afd_btw2025": 22.6,
+      "spd_btw2025": 9.4
+    },
+    "136": {
+      "einkommen": 30743,
+      "population": 130744,
+      "kneipen_count": 37,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 28.3,
+      "schwimmbaeder": 2.3,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "137": {
+      "einkommen": 28049,
+      "population": 46089,
+      "kneipen_count": 21,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 45.6,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "138": {
+      "einkommen": 28191,
+      "population": 70385,
+      "kneipen_count": 45,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 63.9,
+      "schwimmbaeder": 1.4,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "139": {
+      "einkommen": 31305,
+      "population": 83532,
+      "kneipen_count": 15,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 18.0,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "140": {
+      "einkommen": 30544,
+      "population": 46018,
+      "kneipen_count": 13,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 28.2,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 23.4,
+      "spd_btw2025": 9.0
+    },
+    "141": {
+      "einkommen": 30241,
+      "population": 181513,
+      "kneipen_count": 81,
+      "schwimmbaeder_count": 10,
+      "kneipendichte": 44.6,
+      "schwimmbaeder": 5.5,
+      "afd_btw2025": 23.2,
+      "spd_btw2025": 10.7
+    },
+    "142": {
+      "einkommen": 31226,
+      "population": 159259,
+      "kneipen_count": 47,
+      "schwimmbaeder_count": 24,
+      "kneipendichte": 29.5,
+      "schwimmbaeder": 15.1,
+      "afd_btw2025": 17.5,
+      "spd_btw2025": 10.5
+    },
+    "143": {
+      "einkommen": 30505,
+      "population": 145840,
+      "kneipen_count": 49,
+      "schwimmbaeder_count": 37,
+      "kneipendichte": 33.6,
+      "schwimmbaeder": 25.4,
+      "afd_btw2025": 20.2,
+      "spd_btw2025": 9.3
+    },
+    "144": {
+      "einkommen": 31720,
+      "population": 150953,
+      "kneipen_count": 30,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 19.9,
+      "schwimmbaeder": 3.3,
+      "afd_btw2025": 23.4,
+      "spd_btw2025": 9.0
+    },
+    "145": {
+      "einkommen": 29840,
+      "population": 72681,
+      "kneipen_count": 34,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 46.8,
+      "schwimmbaeder": 2.8,
+      "afd_btw2025": 19.0,
+      "spd_btw2025": 12.7
+    },
+    "146": {
+      "einkommen": 29840,
+      "population": 72681,
+      "kneipen_count": 27,
+      "schwimmbaeder_count": 16,
+      "kneipendichte": 37.1,
+      "schwimmbaeder": 22.0,
+      "afd_btw2025": 19.0,
+      "spd_btw2025": 12.7
+    },
+    "147": {
+      "einkommen": 29223,
+      "population": 104733,
+      "kneipen_count": 22,
+      "schwimmbaeder_count": 6,
+      "kneipendichte": 21.0,
+      "schwimmbaeder": 5.7,
+      "afd_btw2025": 23.0,
+      "spd_btw2025": 9.7
+    },
+    "148": {
+      "einkommen": 28983,
+      "population": 85178,
+      "kneipen_count": 32,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 37.6,
+      "schwimmbaeder": 2.3,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "149": {
+      "einkommen": 29691,
+      "population": 93533,
+      "kneipen_count": 62,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 66.3,
+      "schwimmbaeder": 3.2,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "150": {
+      "einkommen": 29508,
+      "population": 127387,
+      "kneipen_count": 37,
+      "schwimmbaeder_count": 17,
+      "kneipendichte": 29.0,
+      "schwimmbaeder": 13.3,
+      "afd_btw2025": 19.3,
+      "spd_btw2025": 12.5
+    },
+    "151": {
+      "einkommen": 29459,
+      "population": 130099,
+      "kneipen_count": 54,
+      "schwimmbaeder_count": 8,
+      "kneipendichte": 41.5,
+      "schwimmbaeder": 6.1,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "152": {
+      "einkommen": 35747,
+      "population": 80443,
+      "kneipen_count": 32,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 39.8,
+      "schwimmbaeder": 3.7,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "153": {
+      "einkommen": 26074,
+      "population": 54871,
+      "kneipen_count": 23,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 41.9,
+      "schwimmbaeder": 3.6,
+      "afd_btw2025": 21.1,
+      "spd_btw2025": 11.5
+    },
+    "154": {
+      "einkommen": 26074,
+      "population": 54871,
+      "kneipen_count": 19,
+      "schwimmbaeder_count": 11,
+      "kneipendichte": 34.6,
+      "schwimmbaeder": 20.0,
+      "afd_btw2025": 21.1,
+      "spd_btw2025": 11.5
+    },
+    "155": {
+      "einkommen": 29291,
+      "population": 128028,
+      "kneipen_count": 64,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 50.0,
+      "schwimmbaeder": 3.9,
+      "afd_btw2025": 13.5,
+      "spd_btw2025": 13.5
+    },
+    "156": {
+      "einkommen": 29291,
+      "population": 128028,
+      "kneipen_count": 24,
+      "schwimmbaeder_count": 10,
+      "kneipendichte": 18.7,
+      "schwimmbaeder": 7.8,
+      "afd_btw2025": 13.5,
+      "spd_btw2025": 13.5
+    },
+    "157": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 1877,
+      "schwimmbaeder_count": 29,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": 15.6,
+      "spd_btw2025": 15.2
+    },
+    "158": {
+      "einkommen": 27177,
+      "population": 192450,
+      "kneipen_count": 24,
+      "schwimmbaeder_count": 77,
+      "kneipendichte": 12.5,
+      "schwimmbaeder": 40.0,
+      "afd_btw2025": 34.9,
+      "spd_btw2025": 13.5
+    },
+    "159": {
+      "einkommen": 23277,
+      "population": 73765,
+      "kneipen_count": 16,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 21.7,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 32.4,
+      "spd_btw2025": 16.2
+    },
+    "160": {
+      "einkommen": 24442,
+      "population": 99763,
+      "kneipen_count": 25,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 25.1,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 39.0,
+      "spd_btw2025": 14.0
+    },
+    "161": {
+      "einkommen": 27083,
+      "population": 179605,
+      "kneipen_count": 29,
+      "schwimmbaeder_count": 23,
+      "kneipendichte": 16.1,
+      "schwimmbaeder": 12.8,
+      "afd_btw2025": 36.5,
+      "spd_btw2025": 13.6
+    },
+    "162": {
+      "einkommen": 24701,
+      "population": 100417,
+      "kneipen_count": 14,
+      "schwimmbaeder_count": 33,
+      "kneipendichte": 13.9,
+      "schwimmbaeder": 32.9,
+      "afd_btw2025": 40.9,
+      "spd_btw2025": 12.5
+    },
+    "163": {
+      "einkommen": 22456,
+      "population": 58524,
+      "kneipen_count": 15,
+      "schwimmbaeder_count": 10,
+      "kneipendichte": 25.6,
+      "schwimmbaeder": 17.1,
+      "afd_btw2025": 34.6,
+      "spd_btw2025": 13.3
+    },
+    "164": {
+      "einkommen": 26615,
+      "population": 169945,
+      "kneipen_count": 16,
+      "schwimmbaeder_count": 26,
+      "kneipendichte": 9.4,
+      "schwimmbaeder": 15.3,
+      "afd_btw2025": 32.4,
+      "spd_btw2025": 16.2
+    },
+    "165": {
+      "einkommen": 26673,
+      "population": 200702,
+      "kneipen_count": 14,
+      "schwimmbaeder_count": 206,
+      "kneipendichte": 7.0,
+      "schwimmbaeder": 102.6,
+      "afd_btw2025": 33.8,
+      "spd_btw2025": 13.1
+    },
+    "166": {
+      "einkommen": 27966,
+      "population": 218703,
+      "kneipen_count": 21,
+      "schwimmbaeder_count": 38,
+      "kneipendichte": 9.6,
+      "schwimmbaeder": 17.4,
+      "afd_btw2025": 29.3,
+      "spd_btw2025": 15.4
+    },
+    "167": {
+      "einkommen": 25139,
+      "population": 107905,
+      "kneipen_count": 24,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 22.2,
+      "schwimmbaeder": 0.9,
+      "afd_btw2025": 40.9,
+      "spd_btw2025": 12.5
+    },
+    "168": {
+      "einkommen": 26329,
+      "population": 182681,
+      "kneipen_count": 27,
+      "schwimmbaeder_count": 84,
+      "kneipendichte": 14.8,
+      "schwimmbaeder": 46.0,
+      "afd_btw2025": 36.3,
+      "spd_btw2025": 13.6
+    },
+    "169": {
+      "einkommen": 25079,
+      "population": 99900,
+      "kneipen_count": 25,
+      "schwimmbaeder_count": 158,
+      "kneipendichte": 25.0,
+      "schwimmbaeder": 158.2,
+      "afd_btw2025": 36.6,
+      "spd_btw2025": 15.9
+    },
+    "170": {
+      "einkommen": 29585,
+      "population": 223046,
+      "kneipen_count": 20,
+      "schwimmbaeder_count": 13,
+      "kneipendichte": 9.0,
+      "schwimmbaeder": 5.8,
+      "afd_btw2025": 25.0,
+      "spd_btw2025": 17.1
+    },
+    "171": {
+      "einkommen": 27311,
+      "population": 186435,
+      "kneipen_count": 47,
+      "schwimmbaeder_count": 15,
+      "kneipendichte": 25.2,
+      "schwimmbaeder": 8.0,
+      "afd_btw2025": 25.0,
+      "spd_btw2025": 17.1
+    },
+    "172": {
+      "einkommen": 25136,
+      "population": 75941,
+      "kneipen_count": 7,
+      "schwimmbaeder_count": 94,
+      "kneipendichte": 9.2,
+      "schwimmbaeder": 123.8,
+      "afd_btw2025": 36.6,
+      "spd_btw2025": 15.9
+    },
+    "173": {
+      "einkommen": 26532,
+      "population": 112230,
+      "kneipen_count": 30,
+      "schwimmbaeder_count": 53,
+      "kneipendichte": 26.7,
+      "schwimmbaeder": 47.2,
+      "afd_btw2025": 36.9,
+      "spd_btw2025": 13.7
+    },
+    "174": {
+      "einkommen": 26082,
+      "population": 177565,
+      "kneipen_count": 40,
+      "schwimmbaeder_count": 39,
+      "kneipendichte": 22.5,
+      "schwimmbaeder": 22.0,
+      "afd_btw2025": 27.3,
+      "spd_btw2025": 16.3
+    },
+    "175": {
+      "einkommen": 24383,
+      "population": 117824,
+      "kneipen_count": 12,
+      "schwimmbaeder_count": 44,
+      "kneipendichte": 10.2,
+      "schwimmbaeder": 37.3,
+      "afd_btw2025": 36.0,
+      "spd_btw2025": 13.8
+    },
+    "176": {
+      "einkommen": 26870,
+      "population": 573211,
+      "kneipen_count": 260,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 45.4,
+      "schwimmbaeder": 0.5,
+      "afd_btw2025": 15.5,
+      "spd_btw2025": 23.3
+    },
+    "177": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 755,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": 10.9,
+      "spd_btw2025": 22.7
+    },
+    "178": {
+      "einkommen": 29794,
+      "population": 275750,
+      "kneipen_count": 73,
+      "schwimmbaeder_count": 95,
+      "kneipendichte": 26.5,
+      "schwimmbaeder": 34.5,
+      "afd_btw2025": 20.1,
+      "spd_btw2025": 17.4
+    },
+    "179": {
+      "einkommen": 30150,
+      "population": 301243,
+      "kneipen_count": 69,
+      "schwimmbaeder_count": 78,
+      "kneipendichte": 22.9,
+      "schwimmbaeder": 25.9,
+      "afd_btw2025": 13.6,
+      "spd_btw2025": 18.5
+    },
+    "180": {
+      "einkommen": 27331,
+      "population": 163518,
+      "kneipen_count": 74,
+      "schwimmbaeder_count": 10,
+      "kneipendichte": 45.3,
+      "schwimmbaeder": 6.1,
+      "afd_btw2025": 13.6,
+      "spd_btw2025": 18.5
+    },
+    "181": {
+      "einkommen": 29442,
+      "population": 774429,
+      "kneipen_count": 416,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 53.7,
+      "schwimmbaeder": 0.4,
+      "afd_btw2025": 14.6,
+      "spd_btw2025": 16.6
+    },
+    "182": {
+      "einkommen": 26095,
+      "population": 281010,
+      "kneipen_count": 59,
+      "schwimmbaeder_count": 108,
+      "kneipendichte": 21.0,
+      "schwimmbaeder": 38.4,
+      "afd_btw2025": 16.9,
+      "spd_btw2025": 20.1
+    },
+    "183": {
+      "einkommen": 38714,
+      "population": 240469,
+      "kneipen_count": 47,
+      "schwimmbaeder_count": 11,
+      "kneipendichte": 19.5,
+      "schwimmbaeder": 4.6,
+      "afd_btw2025": 16.4,
+      "spd_btw2025": 16.6
+    },
+    "184": {
+      "einkommen": 29161,
+      "population": 432420,
+      "kneipen_count": 117,
+      "schwimmbaeder_count": 46,
+      "kneipendichte": 27.1,
+      "schwimmbaeder": 10.6,
+      "afd_btw2025": 14.6,
+      "spd_btw2025": 16.6
+    },
+    "185": {
+      "einkommen": 33707,
+      "population": 242864,
+      "kneipen_count": 59,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 24.3,
+      "schwimmbaeder": 1.2,
+      "afd_btw2025": 15.4,
+      "spd_btw2025": 16.7
+    },
+    "186": {
+      "einkommen": 27113,
+      "population": 97380,
+      "kneipen_count": 56,
+      "schwimmbaeder_count": 16,
+      "kneipendichte": 57.5,
+      "schwimmbaeder": 16.4,
+      "afd_btw2025": 18.8,
+      "spd_btw2025": 18.1
+    },
+    "187": {
+      "einkommen": 22823,
+      "population": 134830,
+      "kneipen_count": 64,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 47.5,
+      "schwimmbaeder": 3.7,
+      "afd_btw2025": 14.7,
+      "spd_btw2025": 16.7
+    },
+    "188": {
+      "einkommen": 29536,
+      "population": 363297,
+      "kneipen_count": 85,
+      "schwimmbaeder_count": 23,
+      "kneipendichte": 23.4,
+      "schwimmbaeder": 6.3,
+      "afd_btw2025": 15.2,
+      "spd_btw2025": 17.4
+    },
+    "189": {
+      "einkommen": 31202,
+      "population": 189766,
+      "kneipen_count": 81,
+      "schwimmbaeder_count": 12,
+      "kneipendichte": 42.7,
+      "schwimmbaeder": 6.3,
+      "afd_btw2025": 15.8,
+      "spd_btw2025": 16.4
+    },
+    "190": {
+      "einkommen": 29714,
+      "population": 317929,
+      "kneipen_count": 122,
+      "schwimmbaeder_count": 56,
+      "kneipendichte": 38.4,
+      "schwimmbaeder": 17.6,
+      "afd_btw2025": 21.1,
+      "spd_btw2025": 16.9
+    },
+    "191": {
+      "einkommen": 33796,
+      "population": 284303,
+      "kneipen_count": 137,
+      "schwimmbaeder_count": 9,
+      "kneipendichte": 48.2,
+      "schwimmbaeder": 3.2,
+      "afd_btw2025": 14.1,
+      "spd_btw2025": 17.5
+    },
+    "192": {
+      "einkommen": 25443,
+      "population": 279466,
+      "kneipen_count": 109,
+      "schwimmbaeder_count": 21,
+      "kneipendichte": 39.0,
+      "schwimmbaeder": 7.5,
+      "afd_btw2025": 19.1,
+      "spd_btw2025": 18.8
+    },
+    "193": {
+      "einkommen": 26820,
+      "population": 257889,
+      "kneipen_count": 90,
+      "schwimmbaeder_count": 4,
+      "kneipendichte": 34.9,
+      "schwimmbaeder": 1.6,
+      "afd_btw2025": 22.8,
+      "spd_btw2025": 18.9
+    },
+    "194": {
+      "einkommen": 27666,
+      "population": 175287,
+      "kneipen_count": 66,
+      "schwimmbaeder_count": 65,
+      "kneipendichte": 37.7,
+      "schwimmbaeder": 37.1,
+      "afd_btw2025": 17.6,
+      "spd_btw2025": 17.0
+    },
+    "195": {
+      "einkommen": 25997,
+      "population": 250063,
+      "kneipen_count": 82,
+      "schwimmbaeder_count": 24,
+      "kneipendichte": 32.8,
+      "schwimmbaeder": 9.6,
+      "afd_btw2025": 18.2,
+      "spd_btw2025": 20.5
+    },
+    "196": {
+      "einkommen": 26952,
+      "population": 106813,
+      "kneipen_count": 38,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 35.6,
+      "schwimmbaeder": 4.7,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "197": {
+      "einkommen": 28034,
+      "population": 228085,
+      "kneipen_count": 54,
+      "schwimmbaeder_count": 22,
+      "kneipendichte": 23.7,
+      "schwimmbaeder": 9.6,
+      "afd_btw2025": 23.6,
+      "spd_btw2025": 12.8
+    },
+    "198": {
+      "einkommen": 26765,
+      "population": 121457,
+      "kneipen_count": 42,
+      "schwimmbaeder_count": 32,
+      "kneipendichte": 34.6,
+      "schwimmbaeder": 26.3,
+      "afd_btw2025": 23.2,
+      "spd_btw2025": 22.2
+    },
+    "199": {
+      "einkommen": 27314,
+      "population": 240907,
+      "kneipen_count": 102,
+      "schwimmbaeder_count": 11,
+      "kneipendichte": 42.3,
+      "schwimmbaeder": 4.6,
+      "afd_btw2025": 15.8,
+      "spd_btw2025": 22.3
+    },
+    "200": {
+      "einkommen": 27314,
+      "population": 240907,
+      "kneipen_count": 22,
+      "schwimmbaeder_count": 33,
+      "kneipendichte": 9.1,
+      "schwimmbaeder": 13.7,
+      "afd_btw2025": 15.8,
+      "spd_btw2025": 22.3
+    },
+    "201": {
+      "einkommen": 26801,
+      "population": 183048,
+      "kneipen_count": 64,
+      "schwimmbaeder_count": 26,
+      "kneipendichte": 35.0,
+      "schwimmbaeder": 14.2,
+      "afd_btw2025": 23.8,
+      "spd_btw2025": 22.4
+    },
+    "202": {
+      "einkommen": 27052,
+      "population": 159172,
+      "kneipen_count": 68,
+      "schwimmbaeder_count": 16,
+      "kneipendichte": 42.7,
+      "schwimmbaeder": 10.1,
+      "afd_btw2025": 21.1,
+      "spd_btw2025": 22.9
+    },
+    "203": {
+      "einkommen": 25598,
+      "population": 100212,
+      "kneipen_count": 30,
+      "schwimmbaeder_count": 48,
+      "kneipendichte": 29.9,
+      "schwimmbaeder": 47.9,
+      "afd_btw2025": 23.2,
+      "spd_btw2025": 22.2
+    },
+    "204": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 13,
+      "schwimmbaeder_count": 11,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "205": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 6,
+      "schwimmbaeder_count": 13,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "206": {
+      "einkommen": 24099,
+      "population": 237270,
+      "kneipen_count": 13,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 5.5,
+      "schwimmbaeder": 0.4,
+      "afd_btw2025": 39.2,
+      "spd_btw2025": 10.1
+    },
+    "207": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 16,
+      "schwimmbaeder_count": 22,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "208": {
+      "einkommen": 27275,
+      "population": 214109,
+      "kneipen_count": 13,
+      "schwimmbaeder_count": 12,
+      "kneipendichte": 6.1,
+      "schwimmbaeder": 5.6,
+      "afd_btw2025": 33.5,
+      "spd_btw2025": 14.4
+    },
+    "209": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 16,
+      "schwimmbaeder_count": 38,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": 37.4,
+      "spd_btw2025": 12.5
+    },
+    "210": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 12,
+      "schwimmbaeder_count": 14,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "211": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 15,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "212": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 19,
+      "schwimmbaeder_count": 9,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "213": {
+      "einkommen": 25414,
+      "population": 160247,
+      "kneipen_count": 12,
+      "schwimmbaeder_count": 49,
+      "kneipendichte": 7.5,
+      "schwimmbaeder": 30.6,
+      "afd_btw2025": 33.5,
+      "spd_btw2025": 14.4
+    },
+    "214": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 32,
+      "schwimmbaeder_count": 14,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "215": {
+      "einkommen": 27275,
+      "population": 214109,
+      "kneipen_count": 11,
+      "schwimmbaeder_count": 18,
+      "kneipendichte": 5.1,
+      "schwimmbaeder": 8.4,
+      "afd_btw2025": 33.5,
+      "spd_btw2025": 14.4
+    },
+    "216": {
+      "einkommen": 26789,
+      "population": 221119,
+      "kneipen_count": 67,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 30.3,
+      "schwimmbaeder": 0.9,
+      "afd_btw2025": 33.4,
+      "spd_btw2025": 13.3
+    },
+    "217": {
+      "einkommen": 25212,
+      "population": 227715,
+      "kneipen_count": 39,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 17.1,
+      "schwimmbaeder": 2.2,
+      "afd_btw2025": 35.5,
+      "spd_btw2025": 10.3
+    },
+    "218": {
+      "einkommen": 24338,
+      "population": 98665,
+      "kneipen_count": 25,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 25.3,
+      "schwimmbaeder": 2.0,
+      "afd_btw2025": 32.3,
+      "spd_btw2025": 14.5
+    },
+    "219": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 24,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "220": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 6,
+      "schwimmbaeder_count": 4,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "221": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 12,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "222": {
+      "einkommen": 27787,
+      "population": 251935,
+      "kneipen_count": 85,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 33.7,
+      "schwimmbaeder": 0.8,
+      "afd_btw2025": 13.3,
+      "spd_btw2025": 22.6
+    },
+    "223": {
+      "einkommen": 28650,
+      "population": 180456,
+      "kneipen_count": 29,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 16.1,
+      "schwimmbaeder": 2.8,
+      "afd_btw2025": 21.3,
+      "spd_btw2025": 23.9
+    },
+    "224": {
+      "einkommen": 27009,
+      "population": 134579,
+      "kneipen_count": 37,
+      "schwimmbaeder_count": 4,
+      "kneipendichte": 27.5,
+      "schwimmbaeder": 3.0,
+      "afd_btw2025": 20.0,
+      "spd_btw2025": 24.9
+    },
+    "225": {
+      "einkommen": 26174,
+      "population": 328705,
+      "kneipen_count": 61,
+      "schwimmbaeder_count": 4,
+      "kneipendichte": 18.6,
+      "schwimmbaeder": 1.2,
+      "afd_btw2025": 17.2,
+      "spd_btw2025": 23.4
+    },
+    "226": {
+      "einkommen": 28146,
+      "population": 92297,
+      "kneipen_count": 17,
+      "schwimmbaeder_count": 9,
+      "kneipendichte": 18.4,
+      "schwimmbaeder": 9.8,
+      "afd_btw2025": 21.8,
+      "spd_btw2025": 23.2
+    },
+    "227": {
+      "einkommen": 27249,
+      "population": 133099,
+      "kneipen_count": 29,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 21.8,
+      "schwimmbaeder": 1.5,
+      "afd_btw2025": 20.0,
+      "spd_btw2025": 24.9
+    },
+    "228": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 25,
+      "schwimmbaeder_count": 14,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "229": {
+      "einkommen": 27126,
+      "population": 139051,
+      "kneipen_count": 22,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 15.8,
+      "schwimmbaeder": 2.2,
+      "afd_btw2025": 21.3,
+      "spd_btw2025": 23.9
+    },
+    "230": {
+      "einkommen": 23692,
+      "population": 104794,
+      "kneipen_count": 16,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 15.3,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 21.3,
+      "spd_btw2025": 24.4
+    },
+    "231": {
+      "einkommen": 27743,
+      "population": 120643,
+      "kneipen_count": 33,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 27.4,
+      "schwimmbaeder": 2.5,
+      "afd_btw2025": 21.3,
+      "spd_btw2025": 24.4
+    },
+    "232": {
+      "einkommen": 28248,
+      "population": 126609,
+      "kneipen_count": 32,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 25.3,
+      "schwimmbaeder": 0.8,
+      "afd_btw2025": 21.8,
+      "spd_btw2025": 23.2
+    },
+    "233": {
+      "einkommen": 29741,
+      "population": 223324,
+      "kneipen_count": 36,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 16.1,
+      "schwimmbaeder": 2.2,
+      "afd_btw2025": 17.6,
+      "spd_btw2025": 22.8
+    },
+    "234": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 35,
+      "schwimmbaeder_count": 6,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": 21.2,
+      "spd_btw2025": 24.6
+    },
+    "235": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 329,
+      "schwimmbaeder_count": 13,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "236": {
+      "einkommen": 26623,
+      "population": 278471,
+      "kneipen_count": 81,
+      "schwimmbaeder_count": 11,
+      "kneipendichte": 29.1,
+      "schwimmbaeder": 4.0,
+      "afd_btw2025": 18.1,
+      "spd_btw2025": 24.2
+    },
+    "237": {
+      "einkommen": 27015,
+      "population": 70809,
+      "kneipen_count": 14,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 19.8,
+      "schwimmbaeder": 4.2,
+      "afd_btw2025": 21.2,
+      "spd_btw2025": 24.6
+    },
+    "238": {
+      "einkommen": 26347,
+      "population": 123679,
+      "kneipen_count": 23,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 18.6,
+      "schwimmbaeder": 2.4,
+      "afd_btw2025": 19.1,
+      "spd_btw2025": 23.6
+    },
+    "239": {
+      "einkommen": 27527,
+      "population": 160098,
+      "kneipen_count": 31,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 19.4,
+      "schwimmbaeder": 1.9,
+      "afd_btw2025": 20.6,
+      "spd_btw2025": 24.3
+    },
+    "240": {
+      "einkommen": 25883,
+      "population": 182173,
+      "kneipen_count": 27,
+      "schwimmbaeder_count": 9,
+      "kneipendichte": 14.8,
+      "schwimmbaeder": 4.9,
+      "afd_btw2025": 20.3,
+      "spd_btw2025": 20.9
+    },
+    "241": {
+      "einkommen": 28142,
+      "population": 201626,
+      "kneipen_count": 124,
+      "schwimmbaeder_count": 14,
+      "kneipendichte": 61.5,
+      "schwimmbaeder": 6.9,
+      "afd_btw2025": 20.0,
+      "spd_btw2025": 24.0
+    },
+    "242": {
+      "einkommen": 32183,
+      "population": 262753,
+      "kneipen_count": 23,
+      "schwimmbaeder_count": 11,
+      "kneipendichte": 8.8,
+      "schwimmbaeder": 4.2,
+      "afd_btw2025": 16.8,
+      "spd_btw2025": 20.5
+    },
+    "243": {
+      "einkommen": 25325,
+      "population": 49194,
+      "kneipen_count": 9,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 18.3,
+      "schwimmbaeder": 4.1,
+      "afd_btw2025": 16.2,
+      "spd_btw2025": 21.0
+    },
+    "244": {
+      "einkommen": 27208,
+      "population": 188206,
+      "kneipen_count": 32,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 17.0,
+      "schwimmbaeder": 2.7,
+      "afd_btw2025": 16.2,
+      "spd_btw2025": 21.0
+    },
+    "245": {
+      "einkommen": 29000,
+      "population": 116519,
+      "kneipen_count": 23,
+      "schwimmbaeder_count": 15,
+      "kneipendichte": 19.7,
+      "schwimmbaeder": 12.9,
+      "afd_btw2025": 17.6,
+      "spd_btw2025": 23.0
+    },
+    "246": {
+      "einkommen": 29258,
+      "population": 168029,
+      "kneipen_count": 20,
+      "schwimmbaeder_count": 18,
+      "kneipendichte": 11.9,
+      "schwimmbaeder": 10.7,
+      "afd_btw2025": 19.1,
+      "spd_btw2025": 23.4
+    },
+    "247": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 40,
+      "schwimmbaeder_count": 12,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "248": {
+      "einkommen": 29045,
+      "population": 210887,
+      "kneipen_count": 33,
+      "schwimmbaeder_count": 23,
+      "kneipendichte": 15.6,
+      "schwimmbaeder": 10.9,
+      "afd_btw2025": 19.2,
+      "spd_btw2025": 23.0
+    },
+    "249": {
+      "einkommen": 26689,
+      "population": 94725,
+      "kneipen_count": 15,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 15.8,
+      "schwimmbaeder": 1.1,
+      "afd_btw2025": 20.3,
+      "spd_btw2025": 20.9
+    },
+    "250": {
+      "einkommen": 29443,
+      "population": 141131,
+      "kneipen_count": 18,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 12.8,
+      "schwimmbaeder": 0.7,
+      "afd_btw2025": 17.6,
+      "spd_btw2025": 23.0
+    },
+    "251": {
+      "einkommen": 28388,
+      "population": 128681,
+      "kneipen_count": 12,
+      "schwimmbaeder_count": 8,
+      "kneipendichte": 9.3,
+      "schwimmbaeder": 6.2,
+      "afd_btw2025": 12.9,
+      "spd_btw2025": 23.8
+    },
+    "252": {
+      "einkommen": 26328,
+      "population": 192340,
+      "kneipen_count": 63,
+      "schwimmbaeder_count": 39,
+      "kneipendichte": 32.8,
+      "schwimmbaeder": 20.3,
+      "afd_btw2025": 21.0,
+      "spd_btw2025": 28.6
+    },
+    "253": {
+      "einkommen": 27147,
+      "population": 178133,
+      "kneipen_count": 39,
+      "schwimmbaeder_count": 42,
+      "kneipendichte": 21.9,
+      "schwimmbaeder": 23.6,
+      "afd_btw2025": 20.6,
+      "spd_btw2025": 15.6
+    },
+    "254": {
+      "einkommen": 23194,
+      "population": 50597,
+      "kneipen_count": 29,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 57.3,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 21.0,
+      "spd_btw2025": 28.6
+    },
+    "255": {
+      "einkommen": 28260,
+      "population": 339166,
+      "kneipen_count": 80,
+      "schwimmbaeder_count": 44,
+      "kneipendichte": 23.6,
+      "schwimmbaeder": 13.0,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "256": {
+      "einkommen": 27074,
+      "population": 100454,
+      "kneipen_count": 28,
+      "schwimmbaeder_count": 9,
+      "kneipendichte": 27.9,
+      "schwimmbaeder": 9.0,
+      "afd_btw2025": 20.2,
+      "spd_btw2025": 25.5
+    },
+    "257": {
+      "einkommen": 26856,
+      "population": 141608,
+      "kneipen_count": 34,
+      "schwimmbaeder_count": 16,
+      "kneipendichte": 24.0,
+      "schwimmbaeder": 11.3,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "258": {
+      "einkommen": 25246,
+      "population": 174136,
+      "kneipen_count": 24,
+      "schwimmbaeder_count": 49,
+      "kneipendichte": 13.8,
+      "schwimmbaeder": 28.1,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "259": {
+      "einkommen": 26329,
+      "population": 173730,
+      "kneipen_count": 42,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 24.2,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 16.2,
+      "spd_btw2025": 23.8
+    },
+    "260": {
+      "einkommen": 29096,
+      "population": 306371,
+      "kneipen_count": 64,
+      "schwimmbaeder_count": 8,
+      "kneipendichte": 20.9,
+      "schwimmbaeder": 2.6,
+      "afd_btw2025": 18.9,
+      "spd_btw2025": 18.4
+    },
+    "261": {
+      "einkommen": 26701,
+      "population": 399157,
+      "kneipen_count": 58,
+      "schwimmbaeder_count": 6,
+      "kneipendichte": 14.5,
+      "schwimmbaeder": 1.5,
+      "afd_btw2025": 19.9,
+      "spd_btw2025": 23.9
+    },
+    "262": {
+      "einkommen": 27062,
+      "population": 338371,
+      "kneipen_count": 83,
+      "schwimmbaeder_count": 6,
+      "kneipendichte": 24.5,
+      "schwimmbaeder": 1.8,
+      "afd_btw2025": 14.4,
+      "spd_btw2025": 20.3
+    },
+    "263": {
+      "einkommen": 30825,
+      "population": 372124,
+      "kneipen_count": 70,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 18.8,
+      "schwimmbaeder": 0.8,
+      "afd_btw2025": 17.8,
+      "spd_btw2025": 18.5
+    },
+    "264": {
+      "einkommen": 28853,
+      "population": 253344,
+      "kneipen_count": 34,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 13.4,
+      "schwimmbaeder": 0.8,
+      "afd_btw2025": 21.3,
+      "spd_btw2025": 21.5
+    },
+    "265": {
+      "einkommen": 27963,
+      "population": 141851,
+      "kneipen_count": 48,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 33.8,
+      "schwimmbaeder": 1.4,
+      "afd_btw2025": 20.6,
+      "spd_btw2025": 17.0
+    },
+    "266": {
+      "einkommen": 28163,
+      "population": 350185,
+      "kneipen_count": 72,
+      "schwimmbaeder_count": 9,
+      "kneipendichte": 20.6,
+      "schwimmbaeder": 2.6,
+      "afd_btw2025": 21.2,
+      "spd_btw2025": 18.9
+    },
+    "267": {
+      "einkommen": 28375,
+      "population": 316085,
+      "kneipen_count": 81,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 25.6,
+      "schwimmbaeder": 0.6,
+      "afd_btw2025": 21.5,
+      "spd_btw2025": 21.8
+    },
+    "268": {
+      "einkommen": 27389,
+      "population": 314579,
+      "kneipen_count": 118,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 37.5,
+      "schwimmbaeder": 1.6,
+      "afd_btw2025": 18.9,
+      "spd_btw2025": 13.8
+    },
+    "269": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 66,
+      "schwimmbaeder_count": 8,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "270": {
+      "einkommen": 21102,
+      "population": 502959,
+      "kneipen_count": 74,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 14.7,
+      "schwimmbaeder": 1.0,
+      "afd_btw2025": 21.0,
+      "spd_btw2025": 25.5
+    },
+    "271": {
+      "einkommen": 32446,
+      "population": 630132,
+      "kneipen_count": 319,
+      "schwimmbaeder_count": 9,
+      "kneipendichte": 50.6,
+      "schwimmbaeder": 1.4,
+      "afd_btw2025": 11.5,
+      "spd_btw2025": 18.0
+    },
+    "272": {
+      "einkommen": 25872,
+      "population": 585594,
+      "kneipen_count": 140,
+      "schwimmbaeder_count": 4,
+      "kneipendichte": 23.9,
+      "schwimmbaeder": 0.7,
+      "afd_btw2025": 17.1,
+      "spd_btw2025": 22.6
+    },
+    "273": {
+      "einkommen": 26689,
+      "population": 228488,
+      "kneipen_count": 64,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 28.0,
+      "schwimmbaeder": 0.4,
+      "afd_btw2025": 15.6,
+      "spd_btw2025": 20.3
+    },
+    "274": {
+      "einkommen": 30997,
+      "population": 490023,
+      "kneipen_count": 97,
+      "schwimmbaeder_count": 9,
+      "kneipendichte": 19.8,
+      "schwimmbaeder": 1.8,
+      "afd_btw2025": 16.2,
+      "spd_btw2025": 19.2
+    },
+    "275": {
+      "einkommen": 25482,
+      "population": 268704,
+      "kneipen_count": 76,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 28.3,
+      "schwimmbaeder": 1.1,
+      "afd_btw2025": 18.1,
+      "spd_btw2025": 18.7
+    },
+    "276": {
+      "einkommen": 28598,
+      "population": 172830,
+      "kneipen_count": 18,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 10.4,
+      "schwimmbaeder": 1.2,
+      "afd_btw2025": 17.0,
+      "spd_btw2025": 23.6
+    },
+    "277": {
+      "einkommen": 23142,
+      "population": 210962,
+      "kneipen_count": 36,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 17.1,
+      "schwimmbaeder": 1.4,
+      "afd_btw2025": 20.4,
+      "spd_btw2025": 25.2
+    },
+    "278": {
+      "einkommen": 26862,
+      "population": 112792,
+      "kneipen_count": 27,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 23.9,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 18.3,
+      "spd_btw2025": 20.1
+    },
+    "279": {
+      "einkommen": 31337,
+      "population": 457993,
+      "kneipen_count": 66,
+      "schwimmbaeder_count": 7,
+      "kneipendichte": 14.4,
+      "schwimmbaeder": 1.5,
+      "afd_btw2025": 15.9,
+      "spd_btw2025": 18.2
+    },
+    "280": {
+      "einkommen": 28618,
+      "population": 161094,
+      "kneipen_count": 27,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 16.8,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 18.3,
+      "spd_btw2025": 20.1
+    },
+    "281": {
+      "einkommen": 29295,
+      "population": 301884,
+      "kneipen_count": 69,
+      "schwimmbaeder_count": 7,
+      "kneipendichte": 22.9,
+      "schwimmbaeder": 2.3,
+      "afd_btw2025": 15.9,
+      "spd_btw2025": 18.2
+    },
+    "282": {
+      "einkommen": 27666,
+      "population": 466675,
+      "kneipen_count": 99,
+      "schwimmbaeder_count": 67,
+      "kneipendichte": 21.2,
+      "schwimmbaeder": 14.4,
+      "afd_btw2025": 18.1,
+      "spd_btw2025": 23.6
+    },
+    "283": {
+      "einkommen": 25304,
+      "population": 358907,
+      "kneipen_count": 81,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 22.6,
+      "schwimmbaeder": 0.3,
+      "afd_btw2025": 18.1,
+      "spd_btw2025": 20.1
+    },
+    "284": {
+      "einkommen": 25577,
+      "population": 563502,
+      "kneipen_count": 108,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 19.2,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 14.4,
+      "spd_btw2025": 19.3
+    },
+    "285": {
+      "einkommen": 25577,
+      "population": 563502,
+      "kneipen_count": 52,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 9.2,
+      "schwimmbaeder": 0.4,
+      "afd_btw2025": 14.4,
+      "spd_btw2025": 19.3
+    },
+    "286": {
+      "einkommen": 29079,
+      "population": 336127,
+      "kneipen_count": 86,
+      "schwimmbaeder_count": 4,
+      "kneipendichte": 25.6,
+      "schwimmbaeder": 1.2,
+      "afd_btw2025": 8.9,
+      "spd_btw2025": 17.7
+    },
+    "287": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 539,
+      "schwimmbaeder_count": 6,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "288": {
+      "einkommen": 26813,
+      "population": 271750,
+      "kneipen_count": 54,
+      "schwimmbaeder_count": 6,
+      "kneipendichte": 19.9,
+      "schwimmbaeder": 2.2,
+      "afd_btw2025": 20.5,
+      "spd_btw2025": 18.5
+    },
+    "289": {
+      "einkommen": 27234,
+      "population": 198538,
+      "kneipen_count": 41,
+      "schwimmbaeder_count": 16,
+      "kneipendichte": 20.7,
+      "schwimmbaeder": 8.1,
+      "afd_btw2025": 18.4,
+      "spd_btw2025": 17.7
+    },
+    "290": {
+      "einkommen": 25922,
+      "population": 262245,
+      "kneipen_count": 26,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 9.9,
+      "schwimmbaeder": 1.1,
+      "afd_btw2025": 20.1,
+      "spd_btw2025": 17.1
+    },
+    "291": {
+      "einkommen": 26709,
+      "population": 166081,
+      "kneipen_count": 56,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 33.7,
+      "schwimmbaeder": 0.6,
+      "afd_btw2025": 15.5,
+      "spd_btw2025": 21.2
+    },
+    "292": {
+      "einkommen": 29271,
+      "population": 275570,
+      "kneipen_count": 41,
+      "schwimmbaeder_count": 13,
+      "kneipendichte": 14.9,
+      "schwimmbaeder": 4.7,
+      "afd_btw2025": 21.2,
+      "spd_btw2025": 17.8
+    },
+    "293": {
+      "einkommen": 28209,
+      "population": 479558,
+      "kneipen_count": 90,
+      "schwimmbaeder_count": 20,
+      "kneipendichte": 18.8,
+      "schwimmbaeder": 4.2,
+      "afd_btw2025": 16.0,
+      "spd_btw2025": 18.1
+    },
+    "294": {
+      "einkommen": 30096,
+      "population": 609436,
+      "kneipen_count": 119,
+      "schwimmbaeder_count": 37,
+      "kneipendichte": 19.5,
+      "schwimmbaeder": 6.1,
+      "afd_btw2025": 16.7,
+      "spd_btw2025": 18.4
+    },
+    "295": {
+      "einkommen": 32592,
+      "population": 286496,
+      "kneipen_count": 37,
+      "schwimmbaeder_count": 11,
+      "kneipendichte": 12.9,
+      "schwimmbaeder": 3.8,
+      "afd_btw2025": 17.2,
+      "spd_btw2025": 18.1
+    },
+    "296": {
+      "einkommen": 29292,
+      "population": 380349,
+      "kneipen_count": 94,
+      "schwimmbaeder_count": 40,
+      "kneipendichte": 24.7,
+      "schwimmbaeder": 10.5,
+      "afd_btw2025": 14.1,
+      "spd_btw2025": 18.0
+    },
+    "297": {
+      "einkommen": 26108,
+      "population": 118409,
+      "kneipen_count": 22,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 18.6,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 20.9,
+      "spd_btw2025": 23.1
+    },
+    "298": {
+      "einkommen": 30858,
+      "population": 225426,
+      "kneipen_count": 42,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 18.6,
+      "schwimmbaeder": 1.3,
+      "afd_btw2025": 12.6,
+      "spd_btw2025": 17.9
+    },
+    "299": {
+      "einkommen": 20138,
+      "population": 264443,
+      "kneipen_count": 29,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 11.0,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 24.7,
+      "spd_btw2025": 24.1
+    },
+    "300": {
+      "einkommen": 29156,
+      "population": 321925,
+      "kneipen_count": 109,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 33.9,
+      "schwimmbaeder": 0.6,
+      "afd_btw2025": 6.9,
+      "spd_btw2025": 18.1
+    },
+    "301": {
+      "einkommen": 25686,
+      "population": 620189,
+      "kneipen_count": 96,
+      "schwimmbaeder_count": 10,
+      "kneipendichte": 15.5,
+      "schwimmbaeder": 1.6,
+      "afd_btw2025": 20.7,
+      "spd_btw2025": 23.3
+    },
+    "302": {
+      "einkommen": 28277,
+      "population": 457830,
+      "kneipen_count": 84,
+      "schwimmbaeder_count": 29,
+      "kneipendichte": 18.3,
+      "schwimmbaeder": 6.3,
+      "afd_btw2025": 14.2,
+      "spd_btw2025": 19.5
+    },
+    "303": {
+      "einkommen": 30037,
+      "population": 282779,
+      "kneipen_count": 47,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 16.6,
+      "schwimmbaeder": 1.1,
+      "afd_btw2025": 16.0,
+      "spd_btw2025": 18.6
+    },
+    "304": {
+      "einkommen": 28655,
+      "population": 128451,
+      "kneipen_count": 51,
+      "schwimmbaeder_count": 10,
+      "kneipendichte": 39.7,
+      "schwimmbaeder": 7.8,
+      "afd_btw2025": 18.3,
+      "spd_btw2025": 17.9
+    },
+    "305": {
+      "einkommen": 26230,
+      "population": 131687,
+      "kneipen_count": 24,
+      "schwimmbaeder_count": 58,
+      "kneipendichte": 18.2,
+      "schwimmbaeder": 44.0,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "306": {
+      "einkommen": 26193,
+      "population": 161580,
+      "kneipen_count": 53,
+      "schwimmbaeder_count": 74,
+      "kneipendichte": 32.8,
+      "schwimmbaeder": 45.8,
+      "afd_btw2025": 22.3,
+      "spd_btw2025": 20.3
+    },
+    "307": {
+      "einkommen": 25374,
+      "population": 81839,
+      "kneipen_count": 46,
+      "schwimmbaeder_count": 179,
+      "kneipendichte": 56.2,
+      "schwimmbaeder": 218.7,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "308": {
+      "einkommen": 26421,
+      "population": 62668,
+      "kneipen_count": 69,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 110.1,
+      "schwimmbaeder": 4.8,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "309": {
+      "einkommen": 26475,
+      "population": 115283,
+      "kneipen_count": 65,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 56.4,
+      "schwimmbaeder": 0.9,
+      "afd_btw2025": 16.4,
+      "spd_btw2025": 19.5
+    },
+    "310": {
+      "einkommen": 26981,
+      "population": 218606,
+      "kneipen_count": 73,
+      "schwimmbaeder_count": 11,
+      "kneipendichte": 33.4,
+      "schwimmbaeder": 5.0,
+      "afd_btw2025": 16.4,
+      "spd_btw2025": 19.5
+    },
+    "311": {
+      "einkommen": 35794,
+      "population": 187790,
+      "kneipen_count": 39,
+      "schwimmbaeder_count": 15,
+      "kneipendichte": 20.8,
+      "schwimmbaeder": 8.0,
+      "afd_btw2025": 21.7,
+      "spd_btw2025": 18.5
+    },
+    "312": {
+      "einkommen": 28488,
+      "population": 105896,
+      "kneipen_count": 42,
+      "schwimmbaeder_count": 36,
+      "kneipendichte": 39.7,
+      "schwimmbaeder": 34.0,
+      "afd_btw2025": 19.6,
+      "spd_btw2025": 17.8
+    },
+    "313": {
+      "einkommen": 26710,
+      "population": 124588,
+      "kneipen_count": 34,
+      "schwimmbaeder_count": 32,
+      "kneipendichte": 27.3,
+      "schwimmbaeder": 25.7,
+      "afd_btw2025": 19.6,
+      "spd_btw2025": 17.8
+    },
+    "314": {
+      "einkommen": 28740,
+      "population": 206496,
+      "kneipen_count": 52,
+      "schwimmbaeder_count": 23,
+      "kneipendichte": 25.2,
+      "schwimmbaeder": 11.1,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "315": {
+      "einkommen": 27657,
+      "population": 132983,
+      "kneipen_count": 40,
+      "schwimmbaeder_count": 141,
+      "kneipendichte": 30.1,
+      "schwimmbaeder": 106.0,
+      "afd_btw2025": 21.9,
+      "spd_btw2025": 19.1
+    },
+    "316": {
+      "einkommen": 31719,
+      "population": 134628,
+      "kneipen_count": 56,
+      "schwimmbaeder_count": 7,
+      "kneipendichte": 41.6,
+      "schwimmbaeder": 5.2,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "317": {
+      "einkommen": 26177,
+      "population": 76148,
+      "kneipen_count": 25,
+      "schwimmbaeder_count": 46,
+      "kneipendichte": 32.8,
+      "schwimmbaeder": 60.4,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "318": {
+      "einkommen": 25477,
+      "population": 49086,
+      "kneipen_count": 11,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 22.4,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 23.4,
+      "spd_btw2025": 19.4
+    },
+    "319": {
+      "einkommen": 27483,
+      "population": 131142,
+      "kneipen_count": 45,
+      "schwimmbaeder_count": 85,
+      "kneipendichte": 34.3,
+      "schwimmbaeder": 64.8,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "320": {
+      "einkommen": 22631,
+      "population": 101357,
+      "kneipen_count": 68,
+      "schwimmbaeder_count": 4,
+      "kneipendichte": 67.1,
+      "schwimmbaeder": 3.9,
+      "afd_btw2025": 25.9,
+      "spd_btw2025": 20.5
+    },
+    "321": {
+      "einkommen": 22631,
+      "population": 101357,
+      "kneipen_count": 32,
+      "schwimmbaeder_count": 28,
+      "kneipendichte": 31.6,
+      "schwimmbaeder": 27.6,
+      "afd_btw2025": 25.9,
+      "spd_btw2025": 20.5
+    },
+    "322": {
+      "einkommen": 25147,
+      "population": 71301,
+      "kneipen_count": 35,
+      "schwimmbaeder_count": 35,
+      "kneipendichte": 49.1,
+      "schwimmbaeder": 49.1,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "323": {
+      "einkommen": 26213,
+      "population": 47976,
+      "kneipen_count": 39,
+      "schwimmbaeder_count": 16,
+      "kneipendichte": 81.3,
+      "schwimmbaeder": 33.4,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "324": {
+      "einkommen": 23283,
+      "population": 175188,
+      "kneipen_count": 115,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 65.6,
+      "schwimmbaeder": 1.1,
+      "afd_btw2025": 23.4,
+      "spd_btw2025": 19.4
+    },
+    "325": {
+      "einkommen": 36208,
+      "population": 215117,
+      "kneipen_count": 44,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 20.5,
+      "schwimmbaeder": 2.3,
+      "afd_btw2025": 10.8,
+      "spd_btw2025": 18.5
+    },
+    "326": {
+      "einkommen": 27153,
+      "population": 221719,
+      "kneipen_count": 125,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 56.4,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 10.8,
+      "spd_btw2025": 18.5
+    },
+    "327": {
+      "einkommen": 35794,
+      "population": 187790,
+      "kneipen_count": 29,
+      "schwimmbaeder_count": 7,
+      "kneipendichte": 15.4,
+      "schwimmbaeder": 3.7,
+      "afd_btw2025": 21.1,
+      "spd_btw2025": 18.3
+    },
+    "328": {
+      "einkommen": 31954,
+      "population": 156134,
+      "kneipen_count": 41,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 26.3,
+      "schwimmbaeder": 0.6,
+      "afd_btw2025": 20.4,
+      "spd_btw2025": 17.5
+    },
+    "329": {
+      "einkommen": 29055,
+      "population": 51286,
+      "kneipen_count": 34,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 66.3,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 20.4,
+      "spd_btw2025": 18.1
+    },
+    "330": {
+      "einkommen": 28759,
+      "population": 112762,
+      "kneipen_count": 34,
+      "schwimmbaeder_count": 68,
+      "kneipendichte": 30.2,
+      "schwimmbaeder": 60.3,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "331": {
+      "einkommen": 27747,
+      "population": 94906,
+      "kneipen_count": 45,
+      "schwimmbaeder_count": 103,
+      "kneipendichte": 47.4,
+      "schwimmbaeder": 108.5,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "332": {
+      "einkommen": 24654,
+      "population": 85128,
+      "kneipen_count": 24,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 28.2,
+      "schwimmbaeder": 1.2,
+      "afd_btw2025": 21.9,
+      "spd_btw2025": 19.1
+    },
+    "333": {
+      "einkommen": 24576,
+      "population": 34574,
+      "kneipen_count": 17,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 49.2,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "334": {
+      "einkommen": 26932,
+      "population": 115091,
+      "kneipen_count": 66,
+      "schwimmbaeder_count": 33,
+      "kneipendichte": 57.3,
+      "schwimmbaeder": 28.7,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "335": {
+      "einkommen": 26997,
+      "population": 104038,
+      "kneipen_count": 43,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 41.3,
+      "schwimmbaeder": 4.8,
+      "afd_btw2025": 17.9,
+      "spd_btw2025": 16.9
+    },
+    "336": {
+      "einkommen": 28633,
+      "population": 153837,
+      "kneipen_count": 53,
+      "schwimmbaeder_count": 20,
+      "kneipendichte": 34.5,
+      "schwimmbaeder": 13.0,
+      "afd_btw2025": 15.5,
+      "spd_btw2025": 20.0
+    },
+    "337": {
+      "einkommen": 26127,
+      "population": 112466,
+      "kneipen_count": 68,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 60.5,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 15.5,
+      "spd_btw2025": 20.0
+    },
+    "338": {
+      "einkommen": 26817,
+      "population": 61840,
+      "kneipen_count": 22,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 35.6,
+      "schwimmbaeder": 4.9,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "339": {
+      "einkommen": 23728,
+      "population": 104376,
+      "kneipen_count": 69,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 66.1,
+      "schwimmbaeder": 1.0,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "340": {
+      "einkommen": 25856,
+      "population": 132338,
+      "kneipen_count": 136,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 102.8,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "341": {
+      "einkommen": 25033,
+      "population": 331638,
+      "kneipen_count": 214,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 64.5,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 20.0,
+      "spd_btw2025": 22.0
+    },
+    "342": {
+      "einkommen": 26836,
+      "population": 195847,
+      "kneipen_count": 129,
+      "schwimmbaeder_count": 20,
+      "kneipendichte": 65.9,
+      "schwimmbaeder": 10.2,
+      "afd_btw2025": 21.7,
+      "spd_btw2025": 21.3
+    },
+    "343": {
+      "einkommen": 28608,
+      "population": 142382,
+      "kneipen_count": 77,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 54.1,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "344": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 73,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": 20.7,
+      "spd_btw2025": 22.2
+    },
+    "345": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 5,
+      "schwimmbaeder_count": 67,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": 37.5,
+      "spd_btw2025": 10.5
+    },
+    "346": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 21,
+      "schwimmbaeder_count": 22,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "347": {
+      "einkommen": 25412,
+      "population": 156939,
+      "kneipen_count": 24,
+      "schwimmbaeder_count": 36,
+      "kneipendichte": 15.3,
+      "schwimmbaeder": 22.9,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "348": {
+      "einkommen": 25214,
+      "population": 79671,
+      "kneipen_count": 19,
+      "schwimmbaeder_count": 50,
+      "kneipendichte": 23.8,
+      "schwimmbaeder": 62.8,
+      "afd_btw2025": 37.5,
+      "spd_btw2025": 10.5
+    },
+    "349": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 11,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "350": {
+      "einkommen": 26121,
+      "population": 123567,
+      "kneipen_count": 15,
+      "schwimmbaeder_count": 9,
+      "kneipendichte": 12.1,
+      "schwimmbaeder": 7.3,
+      "afd_btw2025": 37.5,
+      "spd_btw2025": 10.5
+    },
+    "351": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 7,
+      "schwimmbaeder_count": 22,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "352": {
+      "einkommen": 25189,
+      "population": 177193,
+      "kneipen_count": 39,
+      "schwimmbaeder_count": 11,
+      "kneipendichte": 22.0,
+      "schwimmbaeder": 6.2,
+      "afd_btw2025": 42.3,
+      "spd_btw2025": 9.1
+    },
+    "353": {
+      "einkommen": 22854,
+      "population": 242127,
+      "kneipen_count": 89,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 36.8,
+      "schwimmbaeder": 0.4,
+      "afd_btw2025": 28.6,
+      "spd_btw2025": 12.1
+    },
+    "354": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 14,
+      "schwimmbaeder_count": 4,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": 39.8,
+      "spd_btw2025": 10.4
+    },
+    "355": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 20,
+      "schwimmbaeder_count": 15,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "356": {
+      "einkommen": 26219,
+      "population": 184115,
+      "kneipen_count": 5,
+      "schwimmbaeder_count": 20,
+      "kneipendichte": 2.7,
+      "schwimmbaeder": 10.9,
+      "afd_btw2025": 42.3,
+      "spd_btw2025": 9.1
+    },
+    "357": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 10,
+      "schwimmbaeder_count": 39,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "358": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 11,
+      "schwimmbaeder_count": 13,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "359": {
+      "einkommen": 25829,
+      "population": 82154,
+      "kneipen_count": 10,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 12.2,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 37.4,
+      "spd_btw2025": 11.7
+    },
+    "360": {
+      "einkommen": 26566,
+      "population": 171189,
+      "kneipen_count": 6,
+      "schwimmbaeder_count": 8,
+      "kneipendichte": 3.5,
+      "schwimmbaeder": 4.7,
+      "afd_btw2025": 41.5,
+      "spd_btw2025": 10.4
+    },
+    "361": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 9,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "362": {
+      "einkommen": 26352,
+      "population": 90085,
+      "kneipen_count": 9,
+      "schwimmbaeder_count": 30,
+      "kneipendichte": 10.0,
+      "schwimmbaeder": 33.3,
+      "afd_btw2025": 39.8,
+      "spd_btw2025": 10.4
+    },
+    "363": {
+      "einkommen": 24260,
+      "population": 239738,
+      "kneipen_count": 69,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 28.8,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 30.4,
+      "spd_btw2025": 12.6
+    },
+    "364": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 9,
+      "schwimmbaeder_count": 12,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "365": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 9,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "366": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 10,
+      "schwimmbaeder_count": 9,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "367": {
+      "einkommen": 24954,
+      "population": 109942,
+      "kneipen_count": 16,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 14.6,
+      "schwimmbaeder": 1.8,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "368": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 12,
+      "schwimmbaeder_count": 4,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "369": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 14,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "370": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 20,
+      "schwimmbaeder_count": 8,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "371": {
+      "einkommen": 24904,
+      "population": 249621,
+      "kneipen_count": 41,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 16.4,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 36.9,
+      "spd_btw2025": 9.8
+    },
+    "372": {
+      "einkommen": 24904,
+      "population": 249621,
+      "kneipen_count": 26,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 10.4,
+      "schwimmbaeder": 0.8,
+      "afd_btw2025": 39.8,
+      "spd_btw2025": 8.7
+    },
+    "373": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 24,
+      "schwimmbaeder_count": 7,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "374": {
+      "einkommen": 25867,
+      "population": 327873,
+      "kneipen_count": 11,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 3.4,
+      "schwimmbaeder": 0.3,
+      "afd_btw2025": 43.6,
+      "spd_btw2025": 7.6
+    },
+    "375": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 14,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "376": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 6,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "377": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 12,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "378": {
+      "einkommen": 25891,
+      "population": 222310,
+      "kneipen_count": 44,
+      "schwimmbaeder_count": 8,
+      "kneipendichte": 19.8,
+      "schwimmbaeder": 3.6,
+      "afd_btw2025": 40.6,
+      "spd_btw2025": 8.8
+    },
+    "379": {
+      "einkommen": 26435,
+      "population": 310475,
+      "kneipen_count": 20,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 6.4,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 40.6,
+      "spd_btw2025": 8.9
+    },
+    "380": {
+      "einkommen": 26435,
+      "population": 310475,
+      "kneipen_count": 15,
+      "schwimmbaeder_count": 4,
+      "kneipendichte": 4.8,
+      "schwimmbaeder": 1.3,
+      "afd_btw2025": 39.8,
+      "spd_btw2025": 8.7
+    },
+    "381": {
+      "einkommen": 26549,
+      "population": 297109,
+      "kneipen_count": 33,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 11.1,
+      "schwimmbaeder": 1.0,
+      "afd_btw2025": 37.3,
+      "spd_btw2025": 7.5
+    },
+    "382": {
+      "einkommen": 25679,
+      "population": 564766,
+      "kneipen_count": 188,
+      "schwimmbaeder_count": 95,
+      "kneipendichte": 33.3,
+      "schwimmbaeder": 16.8,
+      "afd_btw2025": 28.0,
+      "spd_btw2025": 9.2
+    },
+    "383": {
+      "einkommen": 24403,
+      "population": 249080,
+      "kneipen_count": 6,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 2.4,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 46.7,
+      "spd_btw2025": 6.4
+    },
+    "384": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 26,
+      "schwimmbaeder_count": 18,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "385": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 23,
+      "schwimmbaeder_count": 8,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "386": {
+      "einkommen": 27331,
+      "population": 241252,
+      "kneipen_count": 28,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 11.6,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 43.6,
+      "spd_btw2025": 7.1
+    },
+    "387": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 9,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "388": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 16,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "389": {
+      "einkommen": 26663,
+      "population": 246108,
+      "kneipen_count": 48,
+      "schwimmbaeder_count": 39,
+      "kneipendichte": 19.5,
+      "schwimmbaeder": 15.8,
+      "afd_btw2025": 46.5,
+      "spd_btw2025": 6.0
+    },
+    "390": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 36,
+      "schwimmbaeder_count": 11,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "391": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 11,
+      "schwimmbaeder_count": 8,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "392": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 10,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "393": {
+      "einkommen": 23683,
+      "population": 617985,
+      "kneipen_count": 265,
+      "schwimmbaeder_count": 17,
+      "kneipendichte": 42.9,
+      "schwimmbaeder": 2.8,
+      "afd_btw2025": 27.5,
+      "spd_btw2025": 10.0
+    },
+    "394": {
+      "einkommen": 23683,
+      "population": 617985,
+      "kneipen_count": 26,
+      "schwimmbaeder_count": 79,
+      "kneipendichte": 4.2,
+      "schwimmbaeder": 12.8,
+      "afd_btw2025": 39.8,
+      "spd_btw2025": 8.7
+    },
+    "395": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 24,
+      "schwimmbaeder_count": 60,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "396": {
+      "einkommen": null,
+      "population": null,
+      "kneipen_count": 16,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": null,
+      "schwimmbaeder": null,
+      "afd_btw2025": null,
+      "spd_btw2025": null
+    },
+    "397": {
+      "einkommen": 29141,
+      "population": 135453,
+      "kneipen_count": 44,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 32.5,
+      "schwimmbaeder": 1.5,
+      "afd_btw2025": 18.2,
+      "spd_btw2025": 17.5
+    },
+    "398": {
+      "einkommen": 23714,
+      "population": 92609,
+      "kneipen_count": 43,
+      "schwimmbaeder_count": 4,
+      "kneipendichte": 46.4,
+      "schwimmbaeder": 4.3,
+      "afd_btw2025": 15.3,
+      "spd_btw2025": 15.9
+    },
+    "399": {
+      "einkommen": 25058,
+      "population": 248295,
+      "kneipen_count": 88,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 35.4,
+      "schwimmbaeder": 0.8,
+      "afd_btw2025": 10.8,
+      "spd_btw2025": 19.3
+    },
+    "400": {
+      "einkommen": 29817,
+      "population": 204274,
+      "kneipen_count": 22,
+      "schwimmbaeder_count": 28,
+      "kneipendichte": 10.8,
+      "schwimmbaeder": 13.7,
+      "afd_btw2025": 17.2,
+      "spd_btw2025": 19.3
+    },
+    "401": {
+      "einkommen": 25623,
+      "population": 218570,
+      "kneipen_count": 110,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 50.3,
+      "schwimmbaeder": 2.3,
+      "afd_btw2025": 15.7,
+      "spd_btw2025": 21.1
+    },
+    "402": {
+      "einkommen": 24602,
+      "population": 79844,
+      "kneipen_count": 8,
+      "schwimmbaeder_count": 5,
+      "kneipendichte": 10.0,
+      "schwimmbaeder": 6.3,
+      "afd_btw2025": 18.0,
+      "spd_btw2025": 19.2
+    },
+    "403": {
+      "einkommen": 33279,
+      "population": 169525,
+      "kneipen_count": 62,
+      "schwimmbaeder_count": 14,
+      "kneipendichte": 36.6,
+      "schwimmbaeder": 8.3,
+      "afd_btw2025": 16.1,
+      "spd_btw2025": 17.4
+    },
+    "404": {
+      "einkommen": 30474,
+      "population": 203941,
+      "kneipen_count": 79,
+      "schwimmbaeder_count": 9,
+      "kneipendichte": 38.7,
+      "schwimmbaeder": 4.4,
+      "afd_btw2025": 17.7,
+      "spd_btw2025": 19.7
+    },
+    "405": {
+      "einkommen": 31360,
+      "population": 323074,
+      "kneipen_count": 31,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 9.6,
+      "schwimmbaeder": 0.6,
+      "afd_btw2025": 15.6,
+      "spd_btw2025": 20.2
+    },
+    "406": {
+      "einkommen": 30122,
+      "population": 131318,
+      "kneipen_count": 16,
+      "schwimmbaeder_count": 21,
+      "kneipendichte": 12.2,
+      "schwimmbaeder": 16.0,
+      "afd_btw2025": 18.0,
+      "spd_btw2025": 19.2
+    },
+    "407": {
+      "einkommen": 31017,
+      "population": 279422,
+      "kneipen_count": 25,
+      "schwimmbaeder_count": 28,
+      "kneipendichte": 8.9,
+      "schwimmbaeder": 10.0,
+      "afd_btw2025": 16.0,
+      "spd_btw2025": 17.7
+    },
+    "408": {
+      "einkommen": 28089,
+      "population": 206212,
+      "kneipen_count": 28,
+      "schwimmbaeder_count": 13,
+      "kneipendichte": 13.6,
+      "schwimmbaeder": 6.3,
+      "afd_btw2025": 15.3,
+      "spd_btw2025": 15.9
+    },
+    "409": {
+      "einkommen": 29899,
+      "population": 286082,
+      "kneipen_count": 32,
+      "schwimmbaeder_count": 26,
+      "kneipendichte": 11.2,
+      "schwimmbaeder": 9.1,
+      "afd_btw2025": 17.2,
+      "spd_btw2025": 19.1
+    },
+    "410": {
+      "einkommen": 29011,
+      "population": 132746,
+      "kneipen_count": 19,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 14.3,
+      "schwimmbaeder": 0.8,
+      "afd_btw2025": 20.4,
+      "spd_btw2025": 17.6
+    },
+    "411": {
+      "einkommen": 32912,
+      "population": 248120,
+      "kneipen_count": 19,
+      "schwimmbaeder_count": 7,
+      "kneipendichte": 7.7,
+      "schwimmbaeder": 2.8,
+      "afd_btw2025": 17.3,
+      "spd_btw2025": 19.3
+    },
+    "412": {
+      "einkommen": 25602,
+      "population": 88740,
+      "kneipen_count": 12,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 13.5,
+      "schwimmbaeder": 2.3,
+      "afd_btw2025": 36.4,
+      "spd_btw2025": 8.8
+    },
+    "413": {
+      "einkommen": 26595,
+      "population": 105266,
+      "kneipen_count": 33,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 31.3,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 38.9,
+      "spd_btw2025": 8.6
+    },
+    "414": {
+      "einkommen": 25276,
+      "population": 215322,
+      "kneipen_count": 73,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 33.9,
+      "schwimmbaeder": 0.5,
+      "afd_btw2025": 26.9,
+      "spd_btw2025": 10.5
+    },
+    "415": {
+      "einkommen": 24576,
+      "population": 94241,
+      "kneipen_count": 31,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 32.9,
+      "schwimmbaeder": 1.1,
+      "afd_btw2025": 43.4,
+      "spd_btw2025": 7.9
+    },
+    "416": {
+      "einkommen": 25434,
+      "population": 134707,
+      "kneipen_count": 25,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 18.6,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 40.6,
+      "spd_btw2025": 8.8
+    },
+    "417": {
+      "einkommen": 26406,
+      "population": 95972,
+      "kneipen_count": 17,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 17.7,
+      "schwimmbaeder": 2.1,
+      "afd_btw2025": 43.4,
+      "spd_btw2025": 7.9
+    },
+    "418": {
+      "einkommen": 26705,
+      "population": 61628,
+      "kneipen_count": 15,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 24.3,
+      "schwimmbaeder": 1.6,
+      "afd_btw2025": 43.1,
+      "spd_btw2025": 8.3
+    },
+    "419": {
+      "einkommen": 25256,
+      "population": 106776,
+      "kneipen_count": 24,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 22.5,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 40.6,
+      "spd_btw2025": 8.8
+    },
+    "420": {
+      "einkommen": 25960,
+      "population": 110991,
+      "kneipen_count": 39,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 35.1,
+      "schwimmbaeder": 0.9,
+      "afd_btw2025": 32.5,
+      "spd_btw2025": 9.0
+    },
+    "421": {
+      "einkommen": 24338,
+      "population": 73453,
+      "kneipen_count": 14,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 19.1,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 38.9,
+      "spd_btw2025": 8.6
+    },
+    "422": {
+      "einkommen": 24575,
+      "population": 82312,
+      "kneipen_count": 16,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 19.4,
+      "schwimmbaeder": 1.2,
+      "afd_btw2025": 38.9,
+      "spd_btw2025": 8.6
+    },
+    "423": {
+      "einkommen": 26603,
+      "population": 83439,
+      "kneipen_count": 20,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 24.0,
+      "schwimmbaeder": 1.2,
+      "afd_btw2025": 42.9,
+      "spd_btw2025": 7.5
+    },
+    "424": {
+      "einkommen": 25859,
+      "population": 78899,
+      "kneipen_count": 17,
+      "schwimmbaeder_count": 4,
+      "kneipendichte": 21.5,
+      "schwimmbaeder": 5.1,
+      "afd_btw2025": 42.9,
+      "spd_btw2025": 7.5
+    },
+    "425": {
+      "einkommen": 26101,
+      "population": 101269,
+      "kneipen_count": 41,
+      "schwimmbaeder_count": 3,
+      "kneipendichte": 40.5,
+      "schwimmbaeder": 3.0,
+      "afd_btw2025": 42.9,
+      "spd_btw2025": 7.5
+    },
+    "426": {
+      "einkommen": 26379,
+      "population": 123607,
+      "kneipen_count": 57,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 46.1,
+      "schwimmbaeder": 1.6,
+      "afd_btw2025": 43.1,
+      "spd_btw2025": 8.3
+    },
+    "427": {
+      "einkommen": 25299,
+      "population": 69532,
+      "kneipen_count": 8,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 11.5,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 32.5,
+      "spd_btw2025": 9.0
+    },
+    "428": {
+      "einkommen": 25966,
+      "population": 56678,
+      "kneipen_count": 12,
+      "schwimmbaeder_count": 4,
+      "kneipendichte": 21.2,
+      "schwimmbaeder": 7.1,
+      "afd_btw2025": 43.1,
+      "spd_btw2025": 8.3
+    },
+    "429": {
+      "einkommen": 26673,
+      "population": 36998,
+      "kneipen_count": 11,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 29.7,
+      "schwimmbaeder": 5.4,
+      "afd_btw2025": 43.1,
+      "spd_btw2025": 8.3
+    },
+    "430": {
+      "einkommen": 24664,
+      "population": 96909,
+      "kneipen_count": 21,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 21.7,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 40.4,
+      "spd_btw2025": 9.3
+    },
+    "431": {
+      "einkommen": 26593,
+      "population": 159196,
+      "kneipen_count": 37,
+      "schwimmbaeder_count": 2,
+      "kneipendichte": 23.2,
+      "schwimmbaeder": 1.3,
+      "afd_btw2025": 40.4,
+      "spd_btw2025": 9.3
+    },
+    "432": {
+      "einkommen": 25184,
+      "population": 65616,
+      "kneipen_count": 27,
+      "schwimmbaeder_count": 0,
+      "kneipendichte": 41.1,
+      "schwimmbaeder": 0.0,
+      "afd_btw2025": 29.7,
+      "spd_btw2025": 9.8
+    },
+    "433": {
+      "einkommen": 26449,
+      "population": 83036,
+      "kneipen_count": 12,
+      "schwimmbaeder_count": 1,
+      "kneipendichte": 14.5,
+      "schwimmbaeder": 1.2,
+      "afd_btw2025": 36.4,
+      "spd_btw2025": 8.8
+    }
+  }
+}

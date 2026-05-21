@@ -3,6 +3,10 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Local import downloads
+data/raw/
+korrelator-3000-codex-export.zip
+
 # C extensions
 *.so
 

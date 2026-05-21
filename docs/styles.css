@@ -272,6 +272,12 @@ select {
   color: var(--ink) !important;
 }
 
+.data-footnote {
+  margin-top: 10px !important;
+  color: var(--muted) !important;
+  font-size: 12px !important;
+}
+
 .status-message {
   left: 12px;
   bottom: 12px;
