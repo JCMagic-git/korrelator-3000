@@ -1,0 +1,62 @@
+[
+  {
+    "id": "kneipendichte",
+    "issue": 2,
+    "label": "Kneipendichte",
+    "unit": "pro 100.000 Einwohner",
+    "sourceStatus": "public-needs-import",
+    "sourceName": "OpenStreetMap Overpass API",
+    "sourceUrl": "https://overpass-turbo.eu/",
+    "granularity": "OSM-Punkte, danach Aggregation auf Kreisgrenzen",
+    "importNote": "Zaehle amenity=pub, amenity=bar und optional amenity=biergarten je Kreis; teile durch Einwohnerzahl.",
+    "range": [2, 95]
+  },
+  {
+    "id": "einkommen",
+    "issue": 4,
+    "label": "Durchschnittseinkommen pro Kopf",
+    "unit": "Euro je Einwohner",
+    "sourceStatus": "public-ready",
+    "sourceName": "Statistikportal / VGR der Laender",
+    "sourceUrl": "https://www.statistikportal.de/de/vgrdl/ergebnisse-kreisebene/einkommen-kreise",
+    "granularity": "Kreise und kreisfreie Staedte",
+    "importNote": "Excel-Tabelle enthaelt Einkommen privater Haushalte 1995 bis 2023; fuer MVP als naechstes nach CSV/JSON konvertieren.",
+    "range": [19000, 42000]
+  },
+  {
+    "id": "afd_btw2025",
+    "issue": 6,
+    "label": "AfD Bundestagswahl 2025",
+    "unit": "Zweitstimmenanteil in Prozent",
+    "sourceStatus": "public-ready",
+    "sourceName": "Die Bundeswahlleiterin Open Data",
+    "sourceUrl": "https://www.bundeswahlleiterin.de/bundestagswahlen/2025/ergebnisse/opendata.html",
+    "granularity": "Bund, Laender und Wahlkreise; keine Kreis- oder Gemeindeergebnisse bei der Bundeswahlleiterin",
+    "importNote": "kerg2.csv liefert Wahlkreiswerte. Fuer die Kreis-Karte braucht es spaeter eine saubere Wahlkreis-zu-Kreis-Naehherung oder eine Landes-/Kommunalquelle.",
+    "range": [4, 42]
+  },
+  {
+    "id": "spd_btw2025",
+    "issue": 8,
+    "label": "SPD Bundestagswahl 2025",
+    "unit": "Zweitstimmenanteil in Prozent",
+    "sourceStatus": "public-ready",
+    "sourceName": "Die Bundeswahlleiterin Open Data",
+    "sourceUrl": "https://www.bundeswahlleiterin.de/bundestagswahlen/2025/ergebnisse/opendata.html",
+    "granularity": "Bund, Laender und Wahlkreise; keine Kreis- oder Gemeindeergebnisse bei der Bundeswahlleiterin",
+    "importNote": "Gleicher Importpfad wie AfD. Fuer die Kreis-Karte braucht es spaeter eine saubere Wahlkreis-zu-Kreis-Naehherung oder eine Landes-/Kommunalquelle.",
+    "range": [6, 32]
+  },
+  {
+    "id": "schwimmbaeder",
+    "issue": 14,
+    "label": "Schwimmbaeder",
+    "unit": "pro 100.000 Einwohner",
+    "sourceStatus": "public-needs-import",
+    "sourceName": "OpenStreetMap Overpass API",
+    "sourceUrl": "https://overpass-turbo.eu/",
+    "granularity": "OSM-Punkte/Polygone, danach Aggregation auf Kreisgrenzen",
+    "importNote": "Zaehle leisure=swimming_pool, amenity=swimming_pool und sport=swimming/aquatics; OSM-Vollstaendigkeit pruefen.",
+    "range": [0.5, 22]
+  }
+]
