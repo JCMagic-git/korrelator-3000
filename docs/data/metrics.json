@@ -10,7 +10,7 @@
     "granularity": "OSM-Punkte, danach Aggregation auf Kreisgrenzen",
     "importNote": "Importiert aus OSM-Nodes amenity=pub/bar/biergarten; aggregiert auf GADM-Kreisgeometrie und geteilt durch Einwohner 2023.",
     "range": [
-      2.4,
+      6.5,
       123.9
     ],
     "dataStatus": "real"
@@ -75,7 +75,7 @@
     "importNote": "Importiert aus OSM-Nodes leisure=swimming_pool, amenity=swimming_pool, sport=swimming/aquatics; aggregiert und geteilt durch Einwohner 2023.",
     "range": [
       0.0,
-      218.7
+      213.8
     ],
     "dataStatus": "real"
   }

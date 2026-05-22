@@ -1,6 +1,13 @@
 # Korrelator 3000 - gepruefte Kennzahl-Kandidaten
 
-Stand: 2026-05-21
+Stand: 2026-05-22
+
+## Geometrie und Mapping
+- Status: umgesetzt
+- Quelle: VG250 Kreisgrenzen 2024, BKG/Esri Deutschland, `© BKG 2024 dl-de/by-2-0`
+- Ebene: 400 Kreise und kreisfreie Staedte mit `AGS`, `ARS`, `GEN`, `BEZ`, `NUTS`
+- Effekt: Einkommen, Einwohner und OSM-Raten werden per AGS bzw. Geometrie vollstaendig fuer 400 Kreise gemappt.
+- Restluecke: Bundestagswahlwerte liegen auf Wahlkreisebene vor und bleiben deshalb eine Namensnaeherung.
 
 ## Score-Idee
 Der Korrelator-Score kombiniert zwei ausgewaehlte Kennzahlen nach Min-Max-Normierung:
@@ -24,7 +31,7 @@ Das Ergebnis ist eine spielerische Gleichzeitigkeitsskala. 100 Prozent bedeutet:
 - Status: importiert
 - Quelle: Statistikportal, Einkommen der privaten Haushalte auf Kreisebene
 - Ebene: Kreise und kreisfreie Staedte
-- Ansatz: Excel-Datei aus Statistikportal wird per Importer gelesen; Mapping aktuell per Name, Bundesland und Kreistyp, weil die GeoJSON-Datei keine amtlichen Kreisschluessel enthaelt.
+- Ansatz: Excel-Datei aus Statistikportal wird per Importer gelesen; Mapping per AGS.
 
 ## #6 AfD Wahlergebnis Bundestagswahl 2025
 - Status: importiert als Wahlkreis-Namensnaeherung

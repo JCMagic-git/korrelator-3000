@@ -156,8 +156,15 @@ def read_income_and_population():
             records = {}
             for row in rows[header_row + 1 :]:
                 nuts_level = next((row[i] for i in (4, 5, 6) if len(row) > i and row[i]), "")
-                if len(row) <= year_index or nuts_level != "3":
+                if len(row) <= year_index:
                     continue
+                if nuts_level != "3":
+                    if row[3] == "HH":
+                        row[2] = "02000"
+                    elif row[3] == "BE":
+                        row[2] = "11000"
+                    else:
+                        continue
                 key = row[2]
                 records[key] = {
                     "state": STATE_NAMES.get(row[3], normalize(row[3])),
@@ -283,8 +290,8 @@ def read_election():
 
 def election_for_feature(feature, election, party):
     props = feature["properties"]
-    state = STATE_BY_NAME.get(props.get("NAME_1", ""), normalize(props.get("NAME_1", "")))
-    name = normalize(props.get("NAME_3", ""))
+    state = STATE_CODES.get(props.get("SN_L", ""), STATE_BY_NAME.get(props.get("NAME_1", ""), normalize(props.get("NAME_1", ""))))
+    name = normalize(props.get("GEN", "") or props.get("NAME_3", ""))
     if not name:
         return None
     matches = []
@@ -299,9 +306,19 @@ def election_for_feature(feature, election, party):
 
 def find_income_record(feature, income_records):
     props = feature["properties"]
-    state = STATE_BY_NAME.get(props.get("NAME_1", ""), normalize(props.get("NAME_1", "")))
-    name = normalize(props.get("NAME_3", ""))
-    bucket = type_bucket(props.get("ENGTYPE_3", "") + " " + props.get("TYPE_3", ""))
+    ags = props.get("AGS")
+    if ags and ags in income_records:
+        return income_records[ags]
+
+    state = STATE_CODES.get(props.get("SN_L", ""), STATE_BY_NAME.get(props.get("NAME_1", ""), normalize(props.get("NAME_1", ""))))
+    name = normalize(props.get("GEN", "") or props.get("NAME_3", ""))
+    bucket = type_bucket(
+        " ".join(
+            str(value)
+            for value in (props.get("BEZ", ""), props.get("ENGTYPE_3", ""), props.get("TYPE_3", ""))
+            if value
+        )
+    )
     candidates = [
         record
         for record in income_records.values()
@@ -378,12 +395,13 @@ def main():
         "sources": {
             "einkommen": "Statistikportal/VGRdL Reihe 2 Band 3, Berechnungsstand Februar 2025, Jahr 2023",
             "population": "Statistikportal/VGRdL Reihe 2 Band 3, Einwohnerinnen und Einwohner, Jahr 2023",
-            "wahl": "Bundeswahlleiterin kerg2.csv, Bundestagswahl 2025, Zweitstimmenanteile; auf GADM-Kreise per Namensnaeherung gemappt",
+            "wahl": "Bundeswahlleiterin kerg2.csv, Bundestagswahl 2025, Zweitstimmenanteile; auf VG250-Kreise per Wahlkreis-Namensnaeherung gemappt",
             "osm": "OpenStreetMap Overpass, Nodes in Deutschland-Bounding-Box, abgerufen am 2026-05-21",
+            "geometry": "VG250 Kreisgrenzen 2024, BKG/Esri Deutschland, AGS-basiert",
         },
         "notes": [
-            "Die vorhandene GADM-Kreisdatei enthaelt keine amtlichen Kreisschluessel. Deshalb werden Einkommen/Einwohner per Name+Bundesland+Kreistyp gemappt.",
-            "Bundestagswahlwerte liegen offiziell auf Wahlkreisebene vor und werden hier als Namensnaeherung an Kreise gehaengt.",
+            "Die Kreisgeometrie nutzt jetzt VG250-Kreisgrenzen mit amtlichem Gemeindeschluessel (AGS). Einkommen und Einwohner werden per AGS gemappt.",
+            "Bundestagswahlwerte liegen offiziell auf Wahlkreisebene vor und werden weiterhin als Namensnaeherung an Kreise gehaengt.",
             "OSM-Werte zaehlen Nodes fuer Kneipen/Bars/Biergaerten bzw. Schwimmbaeder; OSM-Polygone sind im MVP noch nicht enthalten.",
         ],
         "coverage": dict(coverage),

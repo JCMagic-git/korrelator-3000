@@ -2,12 +2,13 @@
 
 Korrelator 3000 ist ein experimentelles Web-Dashboard fuer ueberraschende Korrelationen zwischen Deutschland-Datensaetzen. Der aktuelle MVP zeigt eine Leaflet-Karte mit deutschen Kreis-Geometrien, macht fuenf Kennzahl-Kandidaten aus den GitHub-Issues auswaehlbar und dokumentiert die oeffentlichen Datenquellen direkt im UI.
 
-Die Kartenwerte kommen inzwischen aus echten oeffentlichen Datenquellen. Einige Werte sind wegen der aktuellen GADM-Kreisgeometrie ohne amtliche Kreisschluessel per Namensnaeherung gemappt; fehlende Werte erscheinen im UI als `nicht gemappt`.
+Die Kartenwerte kommen inzwischen aus echten oeffentlichen Datenquellen. Die Kreisgeometrie basiert auf VG250-Kreisgrenzen 2024 mit amtlichem Gemeindeschluessel (AGS), dadurch werden Einkommen, Einwohner und OSM-Raten sauber gemappt. Wahlwerte bleiben eine Wahlkreis-Namensnaeherung, weil die Bundeswahlleiterin keine Kreis- oder Gemeindeergebnisse bereitstellt.
 
 ## Aktueller MVP
 
 - Leaflet-Karte unter `docs/`, GitHub-Pages-faehig
 - Kreis-GeoJSON unter `docs/data/kreise.geojson`
+- AGS-basierte VG250-Kreisgeometrie mit 400 Kreisen
 - auswaehlbare Kennzahlen:
   - #2 Kneipendichte
   - #4 Durchschnittseinkommen pro Kopf
@@ -81,6 +82,6 @@ korrelator-3000/
 
 ## Naechste Schritte
 
-1. GADM-Kreisgeometrie durch BKG/VG250 oder eine andere Kreisdatei mit amtlichem Kreisschluessel ersetzen.
-2. Wahlwerte entweder als eigene Wahlkreis-Karte anzeigen oder mit einer echten Wahlkreis-zu-Kreis-Bruecke mappen.
-3. OSM-Importer um Ways/Relations erweitern, damit polygonal gemappte Schwimmbaeder und Kneipen mitgezaehlt werden.
+1. Wahlwerte entweder als eigene Wahlkreis-Karte anzeigen oder mit einer echten Wahlkreis-zu-Kreis-Bruecke mappen.
+2. OSM-Importer um Ways/Relations erweitern, damit polygonal gemappte Schwimmbaeder und Kneipen mitgezaehlt werden.
+3. Quellenhinweise im UI sichtbarer als Datenqualitaets-Badges darstellen.
