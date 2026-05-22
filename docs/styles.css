@@ -107,30 +107,40 @@ select {
   filter: grayscale(1) contrast(0.9) brightness(1.05);
 }
 
+.side-stack {
+  position: absolute;
+  z-index: 1000;
+  top: 86px;
+  right: 12px;
+  bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: min(430px, calc(100vw - 24px));
+  pointer-events: none;
+}
+
 .info-panel,
 .source-panel,
 .status-message {
-  position: absolute;
-  z-index: 1000;
   border: 1px solid rgba(31, 35, 40, 0.12);
   border-radius: 8px;
   background: var(--panel);
   box-shadow: 0 12px 32px rgba(31, 35, 40, 0.14);
   backdrop-filter: blur(8px);
+  pointer-events: auto;
 }
 
 .info-panel {
-  top: 86px;
-  right: 12px;
-  width: min(360px, calc(100vw - 24px));
+  width: 100%;
+  max-height: 52vh;
+  overflow: auto;
   padding: 16px;
 }
 
 .source-panel {
-  right: 12px;
-  bottom: 12px;
-  width: min(430px, calc(100vw - 24px));
-  max-height: min(44vh, 360px);
+  flex: 1 1 auto;
+  min-height: 112px;
   overflow: auto;
   padding: 14px;
 }
@@ -169,6 +179,10 @@ select {
   grid-template-columns: 1fr 1fr;
   gap: 8px;
   margin-top: 14px;
+}
+
+.metric-grid.is-single {
+  grid-template-columns: 1fr;
 }
 
 .score-box {
@@ -279,6 +293,8 @@ select {
 }
 
 .status-message {
+  position: absolute;
+  z-index: 1000;
   left: 12px;
   bottom: 12px;
   max-width: min(520px, calc(100vw - 24px));
@@ -306,21 +322,22 @@ select {
     height: 100svh;
   }
 
-  .info-panel {
+  .side-stack {
     top: auto;
     right: 12px;
-    bottom: 190px;
+    bottom: 84px;
     left: 12px;
     width: auto;
+    max-height: min(48svh, 390px);
+  }
+
+  .info-panel {
+    max-height: 30svh;
     padding: 14px;
   }
 
   .source-panel {
-    right: 12px;
-    bottom: 56px;
-    left: 12px;
-    width: auto;
-    max-height: 128px;
+    min-height: 92px;
   }
 
   .status-message {

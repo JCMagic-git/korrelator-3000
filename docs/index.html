@@ -35,13 +35,15 @@
     <section class="map-panel" aria-label="Interaktive Deutschlandkarte">
       <div id="map"></div>
 
-      <aside class="info-panel" id="infoBox" aria-live="polite">
-        <p class="eyebrow">MVP</p>
-        <h1>Korrelator 3000</h1>
-        <p>Oeffentliche Quellen sind hinterlegt, Kartenwerte bleiben bis zum Import Platzhalter.</p>
-      </aside>
+      <div class="side-stack">
+        <aside class="info-panel" id="infoBox" aria-live="polite">
+          <p class="eyebrow">Echte Daten</p>
+          <h1>Korrelator 3000</h1>
+          <p>Waehle eine Kennzahl und optional einen Vergleich.</p>
+        </aside>
 
-      <aside class="source-panel" id="sourceBox" aria-live="polite"></aside>
+        <aside class="source-panel" id="sourceBox" aria-live="polite"></aside>
+      </div>
       <div class="status-message" id="statusMessage">Lade MVP...</div>
     </section>
   </main>

@@ -1,7 +1,8 @@
-const GEOJSON_PATH = "data/kreise.geojson";
+﻿const GEOJSON_PATH = "data/kreise.geojson";
 const LEGACY_GEOJSON_PATH = "data/kreise.geojson.json";
 const METRICS_PATH = "data/metrics.json";
 const REAL_METRICS_PATH = "data/real_metrics.json";
+const NO_COMPARISON = "__none";
 
 const map = L.map("map", {
   zoomControl: true,
@@ -31,7 +32,7 @@ let metricDefinitions = [];
 let realMetricsData = { values: {}, coverage: {}, sources: {}, notes: [] };
 
 function repairMojibake(value) {
-  if (typeof value !== "string" || !/[ÃƒÃ‚]/.test(value)) {
+  if (typeof value !== "string" || !/[ÃƒÆ’Ãƒâ€š]/.test(value)) {
     return value;
   }
 
@@ -116,11 +117,16 @@ function normalizeValue(value, metric) {
 
 function createCorrelationScore(feature, primary, secondary) {
   const primaryValue = getMetricValue(feature, primary);
-  const secondaryValue = getMetricValue(feature, secondary);
+  const secondaryValue = secondary ? getMetricValue(feature, secondary) : null;
   const primaryNorm = normalizeValue(primaryValue, primary);
-  const secondaryNorm = normalizeValue(secondaryValue, secondary);
-  const score =
-    primaryNorm === null || secondaryNorm === null ? null : primaryNorm * secondaryNorm * 100;
+  const secondaryNorm = secondary ? normalizeValue(secondaryValue, secondary) : null;
+  const score = secondary
+    ? primaryNorm === null || secondaryNorm === null
+      ? null
+      : primaryNorm * secondaryNorm * 100
+    : primaryNorm === null
+      ? null
+      : primaryNorm * 100;
 
   return {
     primaryValue,
@@ -147,9 +153,11 @@ function getSelectedMetrics() {
     metricDefinitions.find((metric) => metric.id === primaryMetricSelect.value) ||
     metricDefinitions[0];
   const secondary =
-    metricDefinitions.find((metric) => metric.id === secondaryMetricSelect.value) ||
-    metricDefinitions[1] ||
-    metricDefinitions[0];
+    secondaryMetricSelect.value === NO_COMPARISON
+      ? null
+      : metricDefinitions.find((metric) => metric.id === secondaryMetricSelect.value) ||
+        metricDefinitions[1] ||
+        metricDefinitions[0];
 
   return { primary, secondary };
 }
@@ -221,6 +229,13 @@ function getCorrelationTier(score) {
 
 function createSillyExplanation(regionName, primary, secondary, score) {
   const tier = getCorrelationTier(score);
+  if (!secondary) {
+    return {
+      tier,
+      text: `${regionName} zeigt ${primary.label} in dieser Auspraegung. Das ist noch keine Korrelation, aber eine huebsche Verteilung mit Haltung.`,
+    };
+  }
+
   const templates = [
     `In ${regionName} treffen ${primary.label} und ${secondary.label} aufeinander. Die Einstufung lautet: ${tier.label}. Das beweist natuerlich gar nichts, ausser dass der Korrelator bedeutungsvoll in seine Kaffeetasse starrt.`,
     `${regionName} liefert eine Zahlensuppe, in der ${primary.label} und ${secondary.label} gemeinsam oben schwimmen. Das beweist nichts, klingt aber fuer drei Sekunden sehr ueberzeugend.`,
@@ -257,16 +272,30 @@ function renderInfo(feature) {
   ]
     .filter(Boolean)
     .join(" · ");
+  const modeLabel = secondary ? "Korrelator-Score" : "Verteilungs-Score";
+  const modeDescription = secondary
+    ? "Min-max-normalisierte Gleichzeitigkeit echter importierter Werte."
+    : "Min-max-normalisierte Position innerhalb einer einzelnen Datenreihe.";
+  const secondaryMetric = secondary
+    ? `
+      <div class="metric">
+        <span>${escapeHtml(secondary.label)}</span>
+        <strong>${formatValue(secondaryValue, secondary)}</strong>
+        <span>${escapeHtml(secondary.unit)} · normiert ${formatScore(
+          secondaryNorm === null ? null : secondaryNorm * 100
+        )}${secondaryNorm === null ? "" : "%"}</span>
+      </div>`
+    : "";
 
   infoBox.innerHTML = `
-    <p class="eyebrow">Echte Daten · Korrelator-Score</p>
+    <p class="eyebrow">Echte Daten · ${modeLabel}</p>
     <h1>${name}</h1>
-    <p>Min-max-normalisierte Gleichzeitigkeit echter importierter Werte. Keine echte Korrelation, keine Kausalitaet.</p>
+    <p>${modeDescription} Keine echte Korrelation, keine Kausalitaet.</p>
     <div class="score-box">
       <strong>${formatScore(score)}${score === null ? "" : "%"}</strong>
       <span>${escapeHtml(explanation.tier.label)}</span>
     </div>
-    <div class="metric-grid">
+    <div class="metric-grid ${secondary ? "" : "is-single"}">
       <div class="metric">
         <span>${escapeHtml(primary.label)}</span>
         <strong>${formatValue(primaryValue, primary)}</strong>
@@ -274,20 +303,13 @@ function renderInfo(feature) {
           primaryNorm === null ? null : primaryNorm * 100
         )}${primaryNorm === null ? "" : "%"}</span>
       </div>
-      <div class="metric">
-        <span>${escapeHtml(secondary.label)}</span>
-        <strong>${formatValue(secondaryValue, secondary)}</strong>
-        <span>${escapeHtml(secondary.unit)} · normiert ${formatScore(
-          secondaryNorm === null ? null : secondaryNorm * 100
-        )}${secondaryNorm === null ? "" : "%"}</span>
-      </div>
+      ${secondaryMetric}
     </div>
     ${countDetails ? `<p class="data-footnote">${escapeHtml(countDetails)}</p>` : ""}
     <p class="silly-proof">${escapeHtml(explanation.text)}</p>
     <p class="hint">Hinweis: Das ist ein spielerischer Score aus echten, teils naeherungsweise gemappten Daten, kein Statistikbefund.</p>
   `;
 }
-
 function renderSources() {
   const { primary, secondary } = getSelectedMetrics();
   const selected = [primary, secondary].filter(Boolean);
@@ -324,7 +346,7 @@ function showInitialInfo() {
   infoBox.innerHTML = `
     <p class="eyebrow">Echte Daten</p>
     <h1>Korrelator 3000</h1>
-    <p>Waehle zwei Kennzahlen und klicke einen Kreis. Fehlende Werte sind sichtbar als nicht gemappt markiert.</p>
+    <p>Waehle eine Kennzahl und optional einen Vergleich. Fehlende Werte sind sichtbar als nicht gemappt markiert.</p>
   `;
 }
 
@@ -359,8 +381,12 @@ function bindFeature(feature, layer) {
     secondary
   );
 
+  const secondaryText = secondary
+    ? ` / ${secondary.label} ${formatValue(secondaryValue, secondary)}`
+    : "";
+
   layer.bindTooltip(
-    `${name}: Score ${formatScore(score)}${score === null ? "" : "%"} · ${primary.label} ${formatValue(primaryValue, primary)} / ${secondary.label} ${formatValue(secondaryValue, secondary)}`,
+    `${name}: Score ${formatScore(score)}${score === null ? "" : "%"} · ${primary.label} ${formatValue(primaryValue, primary)}${secondaryText}`,
     {
       sticky: true,
       direction: "top",
@@ -388,6 +414,8 @@ function refreshMap() {
 }
 
 function populateMetricSelects() {
+  secondaryMetricSelect.add(new Option("Kein Vergleich", NO_COMPARISON));
+
   metricDefinitions.forEach((metric) => {
     const displayLabel = metric.label
       .replace("Durchschnittseinkommen pro Kopf", "Einkommen pro Kopf")

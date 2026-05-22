@@ -16,6 +16,7 @@ Die Kartenwerte kommen inzwischen aus echten oeffentlichen Datenquellen. Einige 
   - #14 Schwimmbaeder pro 100.000 Einwohner
 - Quellencheck im UI
 - Korrelator-Score aus zwei min-max-normalisierten Kennzahlen
+- `Kein Vergleich`-Modus fuer reine Verteilungsansicht einer einzelnen Kennzahl
 - Hover- und Klick-Tooltips pro Kreis
 - robuste Fehlermeldung, falls JSON-Dateien nicht geladen werden
 - echte Wertedatei `docs/data/real_metrics.json`
